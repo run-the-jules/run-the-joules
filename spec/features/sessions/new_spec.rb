@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'new user session' do
-  it 'has a link from root for user to login' do
+  it 'has a link to log in' do
     visit root_path
 
-    click_button('Log In')
+    click_link('Log In')
     expect(current_path).to eq(login_path)
   end
 
@@ -13,31 +13,31 @@ RSpec.describe 'new user session' do
 
     user = User.create(email: 'test5@gmail.com', username: 'test_username', password: 'test5test5')
 
-    expect(page).to have_link('Sign In with Google')
+    expect(page).to have_link('Log In with Google')
     fill_in 'email', with: 'test5@gmail.com'
     fill_in 'password', with: 'test5test5'
-    click_button 'Log In'
+    click_button 'Submit'
     expect(current_path).to eq(dashboard_user_path(user))
-    expect(page).to have_content('You are logged in!')
+    expect(page).to have_content('You have successfully logged in')
   end
 
-  #   it 'allows user access after sign in ' do
-  #     user = User.create(email: 'test5@gmail.com', password: 'test5test5')
-  #     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-  #     user.authenticate(user.password)
-  #     visit dashboard_user_path(user)
-  #     expect(page).to have_content("Welcome, #{user.email}")
-  #   end
+  # it 'allows user access after sign in ' do
+  #   user = User.create(email: 'test5@gmail.com', password: 'test5test5')
+  #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+  #   user.authenticate(user.password)
+  #   visit dashboard_user_path(user)
+  #   expect(page).to have_content("Welcome, #{user.email}")
+  # end
   #
-  #   it 'will redirect the user if user is already logged in' do
-  #     user = User.create(email: 'test5@gmail.com', password: 'test5test5')
-  #     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-  #     user.authenticate(user.password)
+  # it 'will redirect the user if user is already logged in' do
+  #   user = User.create(email: 'test5@gmail.com', password: 'test5test5')
+  #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+  #   user.authenticate(user.password)
   #
-  #     visit login_path
-  #     expect(current_path).to eq(dashboard_user_path(user.id))
-  #     expect(page).to have_content('You are already logged in!')
-  #   end
+  #   visit login_path
+  #   expect(current_path).to eq(dashboard_user_path(user.id))
+  #   expect(page).to have_content('You are already logged in!')
+  # end
   #
   #   it 'user is logged out if click_on logout' do
   #     visit login_path
