@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'registration', to: 'users#new', as: 'registration'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'about', to: 'welcome#about', as: 'about'
+  get 'contact', to: 'welcome#contact', as: 'contact'
 end
