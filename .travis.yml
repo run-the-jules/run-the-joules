@@ -10,8 +10,10 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key: ...
+  api_key:
+    secure: Zok5hJOtTyzieVRATJI1gjYdPzDU+tybdimn4K3X7vez/zQrpthOhIKNZIYl9gqDrbiUa8tcQ6UvDVAhskh+fbeM/nD8aps4C1bRiwr6Z7tkNrUesbJB3VGEcswmNW4EHQro9ukQWkq4XDiEvEe/xsEi/EZd82Sp7W+uoA4SFcWG2VVsHBBEnXpp7GGRF2gQ6R5WH/IScaWdjSEt3EE/zVlaUlOdAnhMa23/tLVwOxZSC4YtNwL2+53kjs7Z4dmf3sf7gDNlB/Hd0fmPwyVppOhP8vYFL2A3CCy/TE+NTw2LZvlZlNwZkcMZh1jxCTwlGu5T4zDTy8gcbjZBCHBSticuAho/8BSOS8fb/orqMA47+vjAoE3TqikOoc1LrxAelyJuIG3eJb9N7bFRMkFbmYu0Ji/bBAdS4v54oYwZINBlZsYrvrA7FYE+Twi/PNccSUrVUUjIG9K9kydcF9f+PSZ7FDlYdSPkbYAE677yltLUsoVQGLbg7tq4idib39Tv180nl6u67zrCA6vxLlQ+aeSi1qtn2UygLrHjzqNQKsanG5fpZZehPU5jVtYcQXXm7lmJo5WOA3Zhpcr97pWaacpZ3EUAb6ryc4tSbzaQNZeje1UF/5qXg69rkggMkYRspRL1+zdRpj3DmIyrIjFDLz1j3dKwUBVyRo9rA3sgUEU=
   app: tranquil-garden-76939
-  run: rails db:migrate
   on:
+    repo: run-the-jules/run-the-jules
     branch: main
+  skip_cleanup: 'true'
