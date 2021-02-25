@@ -1,5 +1,12 @@
 {
   "name": "run_the_joules",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "build": "postcss app/assets/stylesheets/tailwind.css -o app/assets/stylesheets/custom.css"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.3"
+  }
 }
