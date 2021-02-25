@@ -16,9 +16,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faraday'
 gem 'figaro'
 
-gem 'devise', github: 'heartcombo/devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do

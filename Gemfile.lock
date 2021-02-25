@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/heartcombo/devise.git
-  revision: 0cd72a56f984a7ff089246f87a8b259120545edd
+  revision: e16d60d0fedc5f5e6f541b2b9e901a2d53f8ceda
+  branch: ca-omniauth-2
   specs:
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -163,6 +164,9 @@ GEM
     omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
+    omniauth-rails_csrf_protection (1.0.0)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     parallel (1.20.1)
     parser (3.0.0.0)
@@ -329,6 +333,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-google-oauth2
+  omniauth-rails_csrf_protection
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.11)

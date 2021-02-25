@@ -4,9 +4,10 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
   def self.up
     change_table :users do |t|
       t.string :uid
+      t.string :password
       t.string :avatar_url
+      t.string :full_name
 
-      t.timestamps null: false
     end
 
     add_index :users, :email,                unique: true
