@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates_uniqueness_of :email, case_sensitive: false
-  require 'securerandom'
 
   def self.from_google(email:, full_name:, uid:, avatar_url:)
     create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
