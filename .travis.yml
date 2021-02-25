@@ -10,6 +10,7 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
+  api_key: ...
   app: tranquil-garden-76939
   run: rails db:migrate
   on:
