@@ -7,9 +7,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <style>
+      .flash__alert   { color: red; }
+      .flash__notice  { color: blue; }
+      .flash__success { color: green; }
+    </style>
   </head>
 
   <body class="bg-gray-500">
+  <% if flash.any? %>
+    <% flash.each do |key, value| -%>
+      <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+    <% end -%>
+  <% end %>
     <main class="site-main px-6">
       <div class="flex flex-col-h-screen">
         <section class="mb-24 -mt-2">
