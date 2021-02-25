@@ -11,7 +11,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: 20587f817ac3b8a62fce90990a2be19e28abb45377325fd05f6386b7a3652dcea0e774232cbde6fa1f964c907b730347ab5a1864eca3b1c982f504651738f8e6
+    secure: b626a7b8-7fd3-4cc7-9eb9-f03cf7a45cff
   app: tranquil-garden-76939
   run: rails db:migrate
   on:
