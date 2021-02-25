@@ -10,8 +10,6 @@ script:
 - bundle exec rspec
 deploy:
   provider: heroku
-  api_key:
-    secure: EGrwmCBc39DLvXdJN4NyQuuQJYZVII/G2u+AtDMp5M8Et2NE8+yGE8puEauZDkGc1zaZY6fK9WIYYjl2xEUeb9+xfbcSLRwofZkYLK9FtfPvYNDjfdVSg5PvfpKrlAQgQdAUuIanOf8j69PLRRCD/CvtLMb2NA+Ov0s4Cpnw2sAsasOGhQ4ROT/02pbAfwF1bo9bdQWsZTO2x2aofY2gkKt21djvjn6T1ezqPkiX5E0rpgJYYWMdyCASahUlMvouK49iN7Ts7aiuuFz+4ityGQEHfDUrjXbjhEpW8bq4+xQsaNb6YF9m6kV7T6YaW73Y7nOstUuy/R7b4VH9oJ7XEhqdyzyu6cTd0g262d8RbXKv7uhPsxFfn9EN/LwW4o9jcTo94vGHKIR+I/xEIVSaM0c6M7uH8mrFd7MdSK7rRmHh2uLkMFGj2jsGIFasgYiabN/P6IVzx7E+rbT2CZHyq7y5Dtk178pvgSNoHv20b/f/chTsig6xpG+HYHmzyM15anw3JiVv6UfmaVPW/rufsiXBu70YLozIFT0ayHe2up22fp/Z8olA1pQtbWax1+Ho20Ij4g95z3b8oTwEXbMnL1Ks5TIE69Vm5F9/aeYUrxsA8mB5p7mX0DX91UvtNFVz4EJDu1KNekCcJz+xmnHtvMQwe4ArrVg9kHCBzGGSgH0=
   app: tranquil-garden-76939
   run: rails db:migrate
   on:
