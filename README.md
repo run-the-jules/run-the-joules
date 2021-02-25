@@ -115,12 +115,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-- Alexander Osborne - [Github](https://github.com/AlexanderOsborne)
-- Aiden Mendez - [Github](https://github.com/aidenmendez)
-- Catherine Dean - [Github](https://github.com/catherinemdean15)
-- James Fox-Collis - [Github](https://github.com/jlfoxcollis)
-- Robert Heath - [Github](https://github.com/kaiheiongaku)
-- Joe Jiang - [Github](https://github.com/ninesky00)
+- Alexander Osborne - [Github](https://github.com/AlexanderOsborne) [LinkedIn](https://www.linkedin.com/in/alex-osborne/)
+- Aiden Mendez - [Github](https://github.com/aidenmendez) [LinkedIn](https://www.linkedin.com/in/aiden-mendez/)
+- Catherine Dean - [Github](https://github.com/catherinemdean15) [LinkedIn](https://www.linkedin.com/in/catherine-dean-57a92030/)
+- James Fox-Collis - [Github](https://github.com/jlfoxcollis) [LinkedIn](https://www.linkedin.com/in/james-fox-collis/)
+- Robert Heath - [Github](https://github.com/kaiheiongaku) [LinkedIn](https://www.linkedin.com/in/robert-heath-305bb34b/)
+- Joe Jiang - [Github](https://github.com/ninesky00) [LinkedIn](https://www.linkedin.com/in/joe-jiang01/)
 
 
 Project Link: [https://github.com/run-the-jules/run-the-jules](https://github.com/run-the-jules/run-the-jules)
