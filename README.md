@@ -6,7 +6,7 @@ Run The Jules is an application in which users can sign up and compare their ele
 
 This project is deployed on:
 
-- [Heroku here]()
+- [Heroku here](https://tranquil-garden-76939.herokuapp.com/)
 
 <!-- [AWS here](https://www.example.com) -->
 
@@ -115,12 +115,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Alexander Osborne - [Github](https://github.com/AlexanderOsborne)
-Aiden Mendez - [Github](https://github.com/aidenmendez)
-Catherine Dean - [Github](https://github.com/catherinemdean15)
-James Fox-Collis - [Github](https://github.com/jlfoxcollis)
-Robert Heath - [Github](https://github.com/kaiheiongaku)
-Joe Jiang - [Github](https://github.com/ninesky00)
+- Alexander Osborne - [Github](https://github.com/AlexanderOsborne)
+- Aiden Mendez - [Github](https://github.com/aidenmendez)
+- Catherine Dean - [Github](https://github.com/catherinemdean15)
+- James Fox-Collis - [Github](https://github.com/jlfoxcollis)
+- Robert Heath - [Github](https://github.com/kaiheiongaku)
+- Joe Jiang - [Github](https://github.com/ninesky00)
 
 
 Project Link: [https://github.com/run-the-jules/run-the-jules](https://github.com/run-the-jules/run-the-jules)
