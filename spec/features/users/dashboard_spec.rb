@@ -10,6 +10,8 @@ describe 'dashboard' do
     visit dashboard_user_path(@user)
 
     expect(page).to have_content(@user.total_points)
+    expect(page).to have_content(@user.full_name)
+    expect(page).to have_content(@user.monthly_points)
 
   end
 end
