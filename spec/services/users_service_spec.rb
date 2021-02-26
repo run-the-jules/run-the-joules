@@ -10,10 +10,10 @@ describe 'users service' do
     stub_request(:get, 'https://mysterious-ravine-39718.herokuapp.com/api/v1/1&household_size=3').
          to_return(status: 200, body: usage_stub)
     response = UsersService.call_utility(@user.id, @user.household_size)
-    
-    expect(response[:attributes][:usages]).to have_key(:kwh)
-    expect(response[:attributes][:usages]).to have_key(:monthly_points)
-    expect(response[:attributes][:usages]).to have_key(:start)
-    expect(response[:attributes][:usages]).to have_key(:end)
+
+    expect(response[:attributes][:usages].last).to have_key(:kwh)
+    expect(response[:attributes][:usages].last).to have_key(:monthly_points)
+    expect(response[:attributes][:usages].last).to have_key(:start)
+    expect(response[:attributes][:usages].last).to have_key(:end)
   end
 end

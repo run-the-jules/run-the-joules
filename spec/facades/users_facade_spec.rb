@@ -11,9 +11,10 @@ describe 'users facade' do
 
       usage = UsersFacade.find_usage(user.id, user.household_size)
 
-      expect(usage).to be_a(Hash)
-      expect(usage[:attributes][:usages]).to have_key(:kwh)
-      expect(usage[:attributes][:usages]).to have_key(:monthly_points)
+      expect(usage).to be_an(Array)
+
+      expect(usage.last.kwh).to eq("123456")
+      expect(usage.last.monthly_points).to eq("150")
     end
   end
 end
