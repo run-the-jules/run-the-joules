@@ -54,6 +54,12 @@ body {
 Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
 
+.layout_footer {
+ display: flex;
+ align-self: baseline;
+ flex-direction: row;
+}
+
 body {
   font-family:
 		system-ui,
