@@ -13,7 +13,7 @@ describe 'dashboard' do
 
       usage_stub_2 = File.read('spec/fixtures/utilities.json')
       something = true
-      stub_request(:get, "https://mysterious-ravine-39718.herokuapp.com/api/vi/meter_activation?utilities=#{something}").to_return(
+      stub_request(:get, "https://mysterious-ravine-39718.herokuapp.com/api/v1/meter_activation?utilities=#{something}").to_return(
         status: 200, body: usage_stub_2
       )
     end
@@ -43,6 +43,7 @@ describe 'dashboard' do
       user2 = User.create!(email: 'test8@gmail.com', password: 'test5test5', total_points: 150,
                            full_name: 'Catherine Dean')
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
+      login_as user2
 
       usage_stub_1 = File.read('spec/fixtures/usage_data.json')
       stub_request(:get, "https://mysterious-ravine-39718.herokuapp.com/api/v1/#{user2.id}")
@@ -50,10 +51,10 @@ describe 'dashboard' do
 
       usage_stub_2 = File.read('spec/fixtures/utilities.json')
       something = true
-      stub_request(:get, "https://mysterious-ravine-39718.herokuapp.com/api/vi/meter_activation?utilities=#{something}")
+      stub_request(:get, "https://mysterious-ravine-39718.herokuapp.com/api/v1/meter_activation?utilities=#{something}")
         .to_return(status: 200, body: usage_stub_2)
 
-      visit user_google_oauth2_omniauth_callback_path(user2)
+      visit dashboard_user_path(user2)
 
       expect(current_path).to eq(edit_user_path(user2))
     end
