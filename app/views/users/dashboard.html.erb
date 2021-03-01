@@ -1,4 +1,10 @@
 <h1>Welcome, <%= current_user.full_name %></h1>
+
+<%= form_tag(utilities_path, method: "get") do %>
+      <%= select_tag(:provider, options_for_select(provider_list.map {|utility| [utility[:utility_name], utility[:id]]}), {class: "select-field"}) %>
+      <%= submit_tag('Authorize Provider', class: "button") %>
+    <% end %>
+
 <h3>Your Points:</h3>
 <h2>Total<%=current_user.total_points %></h2>
 <h2>Monthly Points: <% @data_info_usage.each do |month| %>
@@ -6,4 +12,4 @@
                     <% end %></h2>
 <h2><% @data_info_usage.each do |month| %>
         <%= month.end_date.strftime('%B') %>'s usage: <%= month.kwh %> kwh</h2>
-    <% end %>    
+    <% end %>

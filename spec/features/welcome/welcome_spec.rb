@@ -7,7 +7,6 @@ RSpec.describe 'welcome page' do
     expect(page).to have_content('Welcome to Run the Joules')
     expect(page).to have_content('Run the Joules is an app that allows you to compare your energy usage with your friends!')
     expect(page).to have_link('Log In')
-    expect(page).to have_link('Register')
     expect(page).to have_link('Home')
   end
 end

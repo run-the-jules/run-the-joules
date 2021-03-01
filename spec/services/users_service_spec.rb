@@ -6,10 +6,10 @@ describe 'users service' do
                         password: 'password',
                         full_name: 'Tim Tool Man Taylor',
                         household_size: 3)
-    usage_stub = File.read("spec/fixtures/usage_data.json")
-    stub_request(:get, 'https://mysterious-ravine-39718.herokuapp.com/api/v1/1&household_size=3').
-         to_return(status: 200, body: usage_stub)
-    response = UsersService.call_utility(@user.id, @user.household_size)
+    usage_stub = File.read('spec/fixtures/usage_data.json')
+    stub_request(:get, 'https://mysterious-ravine-39718.herokuapp.com/api/v1/1')
+      .to_return(status: 200, body: usage_stub)
+    response = UsersService.call_utility(@user.id)
 
     expect(response[:attributes][:usages].last).to have_key(:kwh)
     expect(response[:attributes][:usages].last).to have_key(:monthly_points)
