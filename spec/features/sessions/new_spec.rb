@@ -14,7 +14,7 @@ RSpec.describe 'new user session' do
     user = User.create(email: 'test5@gmail.com', password: 'test5test5')
     expect(page).to have_link('Sign in with Google')
     click_on 'Sign in with Google'
-    expect(current_path).to eq(dashboard_user_path(user))
+    expect(current_path).to eq(dashboard_index_path)
     expect(page).to have_content('You have successfully logged in')
   end
 
@@ -22,7 +22,7 @@ RSpec.describe 'new user session' do
     user = User.create(email: 'test5@gmail.com', password: 'test5test5')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     user.authenticate(user.password)
-    visit dashboard_user_path(user)
+    visit dashboard_index_path
     expect(page).to have_content("Welcome, #{user.username}")
   end
 
@@ -32,7 +32,7 @@ RSpec.describe 'new user session' do
     user.authenticate(user.password)
 
     visit new_user_session_path
-    expect(current_path).to eq(dashboard_user_path(user.id))
+    expect(current_path).to eq(dashboard_index_path)
     expect(page).to have_content('You are already logged in!')
   end
 

@@ -25,16 +25,13 @@
         <section class="mb-24 -mt-2">
           <ul class="grid grid-gutter grid-flow-col col-start-1 col-end-auto grid-cols-max-content gap-3 list-none md:flex md:flex-wrap -mx-6 md:mx-0 py-1 md:py-2 overflow-x-auto md:overflow-x-visible scrolling-touch scrollbar-hidden " >
             <li class="flex-none inline-flex">
+              <%= link_to "Home", root_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %>
+            </li>
+            <li class="flex-none inline-flex">
               <%= link_to "Log In", new_user_session_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
             </li>
             <li class="flex-none inline-flex">
               <%= link_to "Log Out", destroy_user_session_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
-            </li>
-            <li class="flex-none inline-flex">
-              <%= link_to "Register", registration_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %>
-            </li>
-            <li class="flex-none inline-flex">
-              <%= link_to "Home", root_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %>
             </li>
           </ul>
         </section>
@@ -49,18 +46,22 @@
           <% end %>
         <% end %>
       </section>
-      <div class="flex flex-col-h-screen">
-        <section class="mb-24 -mt-2">
-        <ul class="grid grid-gutter grid-flow-col col-start-1 col-end-auto grid-cols-max-content gap-3 list-none md:flex md:flex-wrap -mx-6 md:mx-0 py-1 md:py-2 overflow-x-auto md:overflow-x-visible scrolling-touch scrollbar-hidden " >
-        <li class="flex-none inline-flex">
-          <%=  link_to 'Contact Us', contact_path %>
-        </li>
-        <li class="flex-none inline-flex">
-          <%= link_to 'About Us', about_path %>
-        </li>
-        <li class="flex-none inline-flex">
-          <a href="https://utilityapi.com">Utility Api</a>
-        </li>
-    </main>
+
+          <div class="flex flex-col-h-screen layout_footer">
+            <section class="mb-24 -mt-2">
+              <ul class="grid grid-gutter grid-flow-col col-start-1 col-end-auto grid-cols-max-content gap-3 list-none md:flex md:flex-wrap -mx-6 md:mx-0 py-1 md:py-2 overflow-x-auto md:overflow-x-visible scrolling-touch scrollbar-hidden " >
+              <li class="flex-none inline-flex">
+                <%=  link_to 'Contact Us', contact_path %>
+              </li>
+              <li class="flex-none inline-flex">
+                <%= link_to 'About Us', about_path %>
+              </li>
+              <li class="flex-none inline-flex">
+                <a href="https://utilityapi.com">Utility Api</a>
+              </li>
+            </section>
+          </div>
+
+      </main>
   </body>
 </html>

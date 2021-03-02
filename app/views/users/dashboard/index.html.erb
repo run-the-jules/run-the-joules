@@ -8,7 +8,7 @@
 <h3>Your Points:</h3>
 <h2>Total<%=current_user.total_points %></h2>
 <h2>Monthly Points: <% @data_info_usage.each do |month| %>
-                          <%= month.total_points %>
+                          <%= month.monthly_points %>
                     <% end %></h2>
 <h2><% @data_info_usage.each do |month| %>
         <%= month.end_date.strftime('%B') %>'s usage: <%= month.kwh %> kwh</h2>
