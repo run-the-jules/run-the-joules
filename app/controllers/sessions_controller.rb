@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
   # def new
-  #   redirect_to dashboard_user_path(current_user), notice: 'You are already logged in!' if current_user
+  #   redirect_to dashboard_index_path(current_user), notice: 'You are already logged in!' if current_user
   # end
 
   # def create
   #   user = User.find_by(email: params[:email].downcase)
   #   if user && user.authenticate(params[:password])
   #     session[:user_id] = user.id
-  #     redirect_to dashboard_user_path(user), notice: 'You have successfully logged in'
+  #     redirect_to dashboard_index_path(user), notice: 'You have successfully logged in'
   #   else
   #     flash.now[:alert] = 'Invalid login credentials'
   #     render 'new'

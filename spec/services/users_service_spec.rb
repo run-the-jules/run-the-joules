@@ -7,7 +7,7 @@ describe 'users service' do
                         full_name: 'Tim Tool Man Taylor',
                         household_size: 3)
     usage_stub = File.read('spec/fixtures/usage_data.json')
-    stub_request(:get, 'https://mysterious-ravine-39718.herokuapp.com/api/v1/1')
+    stub_request(:get, "https://jules-api.herokuapp.com/api/v1/usages?id=#{@user.id}")
       .to_return(status: 200, body: usage_stub)
     response = UsersService.call_utility(@user.id)
 
