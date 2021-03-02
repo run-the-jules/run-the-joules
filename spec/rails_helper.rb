@@ -13,6 +13,14 @@ SimpleCov.add_filter %W[
   config
   spec
 ]
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.ignore_localhost = true
+  config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
+  config.default_cassette_options = { re_record_interval: 7.days }
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

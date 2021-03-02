@@ -1,9 +1,8 @@
 class UtilitiesController < ApplicationController
   def index
-    binding.pry
     email = current_user.email
-    utility = params[:provider]
+    utility = params[:utility]
     data = UsersService.new_user_utility(email, utility)
-    redirect_to data[:url]
+    redirect_to data
   end
 end
