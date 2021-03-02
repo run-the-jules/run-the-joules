@@ -37,7 +37,7 @@ class UsersService
     private
 
     def conn
-      Faraday.new('https://jules-api.herokuapp.com')
+      Faraday.new(ENV['BACKEND_API'])
     end
 
     def parse_data(data)

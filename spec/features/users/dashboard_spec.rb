@@ -12,7 +12,7 @@ describe 'dashboard' do
         .to_return(status: 200, body: usage_stub_1)
 
       usage_stub_2 = File.read('spec/fixtures/utilities.json')
-      stub_request(:get, "https://jules-api.herokuapp.com/api/v1/providers").to_return(
+      stub_request(:get, /providers/).to_return(
         status: 200, body: usage_stub_2
       )
     end
@@ -49,7 +49,7 @@ describe 'dashboard' do
         .to_return(status: 200, body: usage_stub_1)
 
       usage_stub_2 = File.read('spec/fixtures/utilities.json')
-      stub_request(:get, "https://jules-api.herokuapp.com/api/v1/providers")
+      stub_request(:get, /providers/)
         .to_return(status: 200, body: usage_stub_2)
 
       visit dashboard_index_path
