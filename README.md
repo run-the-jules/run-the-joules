@@ -90,8 +90,6 @@ See the [open issues](https://github.com/run-the-jules/issues) for a list of pro
    rails db:setup
    ```
 
-   ```
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
