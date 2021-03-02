@@ -14,44 +14,54 @@
     </style>
   </head>
 
-  <body class="bg-gray-500 flex flex-col min-h-screen">
-    <% if flash.any? %>
-      <% flash.each do |key, value| -%>
-        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
-      <% end -%>
-    <% end %>
-
-    <section id="flash-messages" >
-      <% flash.each do |notice, messages| %>
-        <% if messages.class == Array %>
-          <p><%= messages.to_sentence %></p>
-        <% else %>
-          <p><%= messages%></p>
-        <% end %>
-      <% end %>
-    </section>
-
-    <main class="site-main px-6 flex-grow my-4">
-      <% if current_user %>
-        <%= render partial: "shared/logged_in_menu" %>
-      <% else %>
-        <%= render partial: "shared/logged_out_menu" %>
-      <% end %>
+  <body class="bg-gray-500">
+  <% if flash.any? %>
+    <% flash.each do |key, value| -%>
+      <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+    <% end -%>
+  <% end %>
+    <main class="site-main px-6">
+      <div class="flex flex-col-h-screen">
+        <section class="mb-24 -mt-2">
+          <ul class="grid grid-gutter grid-flow-col col-start-1 col-end-auto grid-cols-max-content gap-3 list-none md:flex md:flex-wrap -mx-6 md:mx-0 py-1 md:py-2 overflow-x-auto md:overflow-x-visible scrolling-touch scrollbar-hidden " >
+            <li class="flex-none inline-flex">
+              <%= link_to "Home", root_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %>
+            </li>
+            <li class="flex-none inline-flex">
+              <%= link_to "Log In", new_user_session_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
+            </li>
+            <li class="flex-none inline-flex">
+              <%= link_to "Log Out", destroy_user_session_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
+            </li>
+          </ul>
+        </section>
+      </div>
       <%= yield %>
-    </main>
+      <section id="flash-messages" >
+        <% flash.each do |notice, messages| %>
+          <% if messages.class == Array %>
+            <p><%= messages.to_sentence %></p>
+          <% else %>
+            <p><%= messages%></p>
+          <% end %>
+        <% end %>
+      </section>
 
-    <footer class="mb-3 -mt-2 w-full items-center">
-      <ul class="text-center list-none space-x-6">
-        <li class="inline-block gap-6">
-          <%=  link_to 'Contact Us', contact_path %>
-        </li>
-        <li class="inline-block gap-6">
-          <%= link_to 'About Us', about_path %>
-        </li>
-        <li class="inline-block gap-6">
-          <a href="https://utilityapi.com">Utility Api</a>
-        </li>
-      </ul>
-    </footer>
+          <div class="flex flex-col-h-screen layout_footer">
+            <section class="mb-24 -mt-2">
+              <ul class="grid grid-gutter grid-flow-col col-start-1 col-end-auto grid-cols-max-content gap-3 list-none md:flex md:flex-wrap -mx-6 md:mx-0 py-1 md:py-2 overflow-x-auto md:overflow-x-visible scrolling-touch scrollbar-hidden " >
+              <li class="flex-none inline-flex">
+                <%=  link_to 'Contact Us', contact_path %>
+              </li>
+              <li class="flex-none inline-flex">
+                <%= link_to 'About Us', about_path %>
+              </li>
+              <li class="flex-none inline-flex">
+                <a href="https://utilityapi.com">Utility Api</a>
+              </li>
+            </section>
+          </div>
+
+      </main>
   </body>
 </html>
