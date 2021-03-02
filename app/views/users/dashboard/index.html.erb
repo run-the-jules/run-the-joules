@@ -1,9 +1,9 @@
 <h1>Welcome, <%= current_user.full_name %></h1>
 
-<%= form_tag(utilities_path, method: "get") do %>
-      <%= select_tag(:provider, options_for_select(provider_list.map {|utility| [utility[:utility_name], utility[:id]]}), {class: "select-field"}) %>
-      <%= submit_tag('Authorize Provider', class: "button") %>
-    <% end %>
+<%= form_with url: utilities_path, method: :get, local: true do |f| %>
+  <%= f.select :utility, provider_list.map {|utility| [utility[:attributes][:name], utility[:attributes][:id]]}, prompt: "select-field" %>
+  <%= f.submit 'Authorize Provider', class: "button" %>
+<% end %>
 
 
 <h3>Your Points:</h3>
