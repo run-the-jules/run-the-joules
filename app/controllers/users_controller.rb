@@ -6,15 +6,17 @@ class UsersController < ApplicationController
   #     UsersFacade.find_usage(params[:id])
   #   end
   # end
-
-  def edit
+  def new 
+    redirect_to root_path if current_user
   end
+  
+  def edit; end
 
   def update
     current_user.update(user_params)
     redirect_to dashboard_index_path
   end
-
+  
   private
 
   def user_params
