@@ -28,4 +28,5 @@ ActiveRecord::Schema.define(version: 2021_02_26_012122) do
     t.integer "household_size"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
+
 end

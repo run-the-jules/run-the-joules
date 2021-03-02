@@ -4,7 +4,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.2]
   def self.up
     change_table :users do |t|
       t.string :uid
-      t.string :password
       t.string :avatar_url
       t.string :full_name
 
