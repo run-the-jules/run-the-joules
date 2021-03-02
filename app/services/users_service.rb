@@ -7,6 +7,13 @@ class UsersService
       parse_data(response)
     end
 
+    def get_friends(id)
+      response = conn.get("/api/v1/friendships") do |request|
+        request.params[:id] = id
+      end
+      parse_data(response)
+    end
+    
     def fetch_utilities
       response = conn.get("/api/v1/providers")
       parse_data(response)
