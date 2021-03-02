@@ -1,5 +1,9 @@
 module ApplicationHelper
   def provider_list
-    UsersService.fetch_utilities[:data]
+    begin
+      UsersService.fetch_utilities[:data]
+    rescue
+      [{"nil" => "nil"}]
+    end
   end
 end
