@@ -11,6 +11,6 @@ class User < ApplicationRecord
   def friends
     # friend_ids = UsersService.get_friends(self.id)
     friend_ids = [1]
-    User.find_by(id: friend_ids)
+    User.where(id: friend_ids)
   end
 end
