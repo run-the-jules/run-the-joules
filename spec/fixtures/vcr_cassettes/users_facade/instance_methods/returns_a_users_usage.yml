@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://jules-api.herokuapp.com/api/v1/usages/1?id=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Wed, 03 Mar 2021 19:42:54 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f9e680af8f6d84dbd43be05e1a1be3b6"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 24d6cae8-b117-4d56-b71e-450dbc4fcd2e
+      X-Runtime:
+      - '0.022652'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"72","type":"usages","attributes":{"user_id":1,"kwh":900,"start_date":null,"end_date":null,"meter_id":"112675"}},{"id":"129","type":"usages","attributes":{"user_id":1,"kwh":743,"start_date":"2021-01-31","end_date":"2021-02-28","meter_id":"711267"}},{"id":"130","type":"usages","attributes":{"user_id":1,"kwh":731,"start_date":"2020-12-31","end_date":"2021-01-31","meter_id":"711267"}},{"id":"131","type":"usages","attributes":{"user_id":1,"kwh":756,"start_date":"2020-11-30","end_date":"2020-12-31","meter_id":"711267"}},{"id":"132","type":"usages","attributes":{"user_id":1,"kwh":810,"start_date":"2020-10-31","end_date":"2020-11-30","meter_id":"711267"}},{"id":"133","type":"usages","attributes":{"user_id":1,"kwh":779,"start_date":"2020-09-30","end_date":"2020-10-31","meter_id":"711267"}},{"id":"134","type":"usages","attributes":{"user_id":1,"kwh":938,"start_date":"2020-08-31","end_date":"2020-09-30","meter_id":"711267"}},{"id":"135","type":"usages","attributes":{"user_id":1,"kwh":846,"start_date":"2020-07-31","end_date":"2020-08-31","meter_id":"711267"}},{"id":"136","type":"usages","attributes":{"user_id":1,"kwh":903,"start_date":"2020-06-30","end_date":"2020-07-31","meter_id":"711267"}},{"id":"137","type":"usages","attributes":{"user_id":1,"kwh":833,"start_date":"2020-05-31","end_date":"2020-06-30","meter_id":"711267"}},{"id":"138","type":"usages","attributes":{"user_id":1,"kwh":652,"start_date":"2020-04-30","end_date":"2020-05-31","meter_id":"711267"}},{"id":"139","type":"usages","attributes":{"user_id":1,"kwh":889,"start_date":"2020-03-31","end_date":"2020-04-30","meter_id":"711267"}},{"id":"140","type":"usages","attributes":{"user_id":1,"kwh":1017,"start_date":"2020-02-29","end_date":"2020-03-31","meter_id":"711267"}},{"id":"141","type":"usages","attributes":{"user_id":1,"kwh":837,"start_date":"2020-01-31","end_date":"2020-02-29","meter_id":"711267"}},{"id":"142","type":"usages","attributes":{"user_id":1,"kwh":837,"start_date":"2019-12-31","end_date":"2020-01-31","meter_id":"711267"}},{"id":"143","type":"usages","attributes":{"user_id":1,"kwh":743,"start_date":"2021-01-31","end_date":"2021-02-28","meter_id":"711267"}},{"id":"144","type":"usages","attributes":{"user_id":1,"kwh":731,"start_date":"2020-12-31","end_date":"2021-01-31","meter_id":"711267"}},{"id":"145","type":"usages","attributes":{"user_id":1,"kwh":756,"start_date":"2020-11-30","end_date":"2020-12-31","meter_id":"711267"}},{"id":"146","type":"usages","attributes":{"user_id":1,"kwh":810,"start_date":"2020-10-31","end_date":"2020-11-30","meter_id":"711267"}},{"id":"147","type":"usages","attributes":{"user_id":1,"kwh":779,"start_date":"2020-09-30","end_date":"2020-10-31","meter_id":"711267"}},{"id":"148","type":"usages","attributes":{"user_id":1,"kwh":938,"start_date":"2020-08-31","end_date":"2020-09-30","meter_id":"711267"}},{"id":"149","type":"usages","attributes":{"user_id":1,"kwh":846,"start_date":"2020-07-31","end_date":"2020-08-31","meter_id":"711267"}},{"id":"150","type":"usages","attributes":{"user_id":1,"kwh":903,"start_date":"2020-06-30","end_date":"2020-07-31","meter_id":"711267"}},{"id":"151","type":"usages","attributes":{"user_id":1,"kwh":833,"start_date":"2020-05-31","end_date":"2020-06-30","meter_id":"711267"}},{"id":"152","type":"usages","attributes":{"user_id":1,"kwh":652,"start_date":"2020-04-30","end_date":"2020-05-31","meter_id":"711267"}},{"id":"153","type":"usages","attributes":{"user_id":1,"kwh":889,"start_date":"2020-03-31","end_date":"2020-04-30","meter_id":"711267"}},{"id":"154","type":"usages","attributes":{"user_id":1,"kwh":1017,"start_date":"2020-02-29","end_date":"2020-03-31","meter_id":"711267"}},{"id":"155","type":"usages","attributes":{"user_id":1,"kwh":837,"start_date":"2020-01-31","end_date":"2020-02-29","meter_id":"711267"}},{"id":"156","type":"usages","attributes":{"user_id":1,"kwh":837,"start_date":"2019-12-31","end_date":"2020-01-31","meter_id":"711267"}},{"id":"157","type":"usages","attributes":{"user_id":1,"kwh":743,"start_date":"2021-01-31","end_date":"2021-02-28","meter_id":"711267"}},{"id":"158","type":"usages","attributes":{"user_id":1,"kwh":731,"start_date":"2020-12-31","end_date":"2021-01-31","meter_id":"711267"}},{"id":"159","type":"usages","attributes":{"user_id":1,"kwh":756,"start_date":"2020-11-30","end_date":"2020-12-31","meter_id":"711267"}},{"id":"160","type":"usages","attributes":{"user_id":1,"kwh":810,"start_date":"2020-10-31","end_date":"2020-11-30","meter_id":"711267"}},{"id":"161","type":"usages","attributes":{"user_id":1,"kwh":779,"start_date":"2020-09-30","end_date":"2020-10-31","meter_id":"711267"}},{"id":"162","type":"usages","attributes":{"user_id":1,"kwh":938,"start_date":"2020-08-31","end_date":"2020-09-30","meter_id":"711267"}},{"id":"163","type":"usages","attributes":{"user_id":1,"kwh":846,"start_date":"2020-07-31","end_date":"2020-08-31","meter_id":"711267"}},{"id":"164","type":"usages","attributes":{"user_id":1,"kwh":903,"start_date":"2020-06-30","end_date":"2020-07-31","meter_id":"711267"}},{"id":"165","type":"usages","attributes":{"user_id":1,"kwh":833,"start_date":"2020-05-31","end_date":"2020-06-30","meter_id":"711267"}},{"id":"166","type":"usages","attributes":{"user_id":1,"kwh":652,"start_date":"2020-04-30","end_date":"2020-05-31","meter_id":"711267"}},{"id":"167","type":"usages","attributes":{"user_id":1,"kwh":889,"start_date":"2020-03-31","end_date":"2020-04-30","meter_id":"711267"}},{"id":"168","type":"usages","attributes":{"user_id":1,"kwh":1017,"start_date":"2020-02-29","end_date":"2020-03-31","meter_id":"711267"}},{"id":"169","type":"usages","attributes":{"user_id":1,"kwh":837,"start_date":"2020-01-31","end_date":"2020-02-29","meter_id":"711267"}},{"id":"170","type":"usages","attributes":{"user_id":1,"kwh":837,"start_date":"2019-12-31","end_date":"2020-01-31","meter_id":"711267"}}]}'
+  recorded_at: Wed, 03 Mar 2021 19:42:55 GMT
+recorded_with: VCR 6.0.0
