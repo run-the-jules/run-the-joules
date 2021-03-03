@@ -1,0 +1,15 @@
+{
+  "data": [
+  {
+  "id": "72",
+  "type": "usages",
+  "attributes": {
+  "user_id": 1,
+  "kwh": 900,
+  "start_date": null,
+  "end_date": null,
+  "meter_id": "112675"
+  }
+  }
+  ]
+  }
