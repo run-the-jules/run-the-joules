@@ -31,7 +31,9 @@ describe 'dashboard' do
       expect(page).to have_content('Xcel Energy')
       expect(page).to have_content('Atlantic City Electric')
     end
-
+  end
+  
+  describe 'it can redirect if already signed in' do
     it 'redirects if you are signed in', :vcr do
       user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
       full_name: 'Catherine Dean', household_size: 5)
