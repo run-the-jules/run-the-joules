@@ -42,6 +42,18 @@ describe 'dashboard' do
 
         expect(current_path).to eq(dashboard_index_path)
     end
+
+
+    it 'redirects if signed in', :vcr do
+      user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
+      full_name: 'Catherine Dean', household_size: 5)
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
+        login_as user2
+
+        visit registration_path
+
+        expect(current_path).to eq(dashboard_index_path)
+    end
   end
 
   describe 'redirect path' do

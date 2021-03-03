@@ -8,13 +8,5 @@ class UsersFacade
         end
       end
     end
-
-    def friends_usage(friends)
-      friends.map do |monthly_usage|
-        begin MonthlyUsage.new(monthly_usage)
-        rescue StandardError
-        end
-      end
-    end
   end
 end
