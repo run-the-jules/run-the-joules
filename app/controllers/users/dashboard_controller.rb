@@ -5,7 +5,7 @@ class Users::DashboardController < ApplicationController
   def index
     params[:id] = current_user.id
     if current_user.friends
-      @friends = current_user.friends.each do |friend|
+      @friends = current_user.friends.flat_map do |friend|
         begin UsersFacade.find_usage(friend.id)
         rescue
         end
