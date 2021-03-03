@@ -15,4 +15,56 @@ describe 'users service' do
     expect(response[:attributes][:usages].last).to have_key(:start)
     expect(response[:attributes][:usages].last).to have_key(:end)
   end
+
+  it 'can get friends' do
+    @user = User.create(id: 1, email: 'user@example.com',
+    full_name: 'Tim Tool Man Taylor',
+    household_size: 3)
+    usage_stub_3 = File.read('spec/fixtures/friends.json')
+    stub_request(:get, /friendship/).to_return(
+      status: 200, body: usage_stub_3
+    )
+
+    response = UsersService.get_friends(@user.id)
+    expect(response).to have_key(:data)
+    expect(response[:data]).to have_key(:attributes)
+    expect(response[:data][:attributes]).to have_key(:user_id)
+    expect(response[:data][:attributes]).to have_key(:user_kwh)
+    expect(response[:data][:attributes]).to have_key(:friends_data)
+    expect(response[:data][:attributes][:friends_data].first).to have_key(:friend_id)
+    expect(response[:data][:attributes][:friends_data].first).to have_key(:kwh_usage)
+  end
+
+  it 'can get url' do
+    @user = User.create(id: 1, email: 'user@example.com',
+    full_name: 'Tim Tool Man Taylor',
+    household_size: 3)
+    usage_stub_3 = File.read('spec/fixtures/friends.json')
+    stub_request(:get, /friendship/).to_return(
+      status: 200, body: usage_stub_3
+    )
+
+    response = UsersService.new_user_utility(@user.email, "ACE")
+
+    expect(response).to be_a(String)
+  end
+
+  it 'can request all meters' do
+
+    @user = User.create(id: 1, email: 'user@example.com',
+    full_name: 'Tim Tool Man Taylor',
+    household_size: 3)
+
+    meters = {"meter_uid":"711267"}.to_json
+    stub_request(:get, /meters/).to_return(
+      status: 200, body: meters
+    )
+    params = Hash.new
+    params[:referral] = 186139
+    params[:id] = @user.id
+    response = UsersService.get_meters(params)
+
+    expect(response).to have_key(:meter_uid)
+  end
+
 end
