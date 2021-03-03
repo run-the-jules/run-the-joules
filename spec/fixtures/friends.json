@@ -1,0 +1,16 @@
+{
+    "data": {
+      "id": null,
+      "type": "friend_usage",
+      "attributes": {
+        "user_id": "1",
+        "user_kwh": 900,
+        "friends_data": [
+          {
+            "friend_id": 4,
+            "kwh_usage": 900
+          }
+        ]
+      }
+    }
+  }

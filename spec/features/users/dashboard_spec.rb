@@ -38,7 +38,7 @@ describe 'dashboard' do
   end
 
   describe 'redirect path', :vcr do
-    xit 'redirects to edit page if user has not entered household_size' do
+    it 'redirects to edit page if user has not entered household_size' do
       user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
                            full_name: 'Catherine Dean')
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)

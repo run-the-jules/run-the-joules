@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   def friends
     # friend_ids = UsersService.get_friends(self.id)
-    friend_ids = [1]
+    friend_ids = [4]
     User.where(id: friend_ids)
   end
 end

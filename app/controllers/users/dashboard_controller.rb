@@ -5,8 +5,11 @@ class Users::DashboardController < ApplicationController
   def index
     params[:id] = current_user.id
     if current_user.friends
-       @friends = UsersFacade.friends_usage(current_user.friends)
-       binding.pry
+      @friends = current_user.friends.each do |friend|
+        begin UsersFacade.find_usage(friend.id)
+        rescue
+        end
+      end
     end
     begin
       if params[:referral]
