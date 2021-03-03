@@ -11,7 +11,7 @@ RSpec.describe 'new user session' do
   xit 'allows user to login' do
     visit new_user_session_path
 
-    user = User.create(email: 'test5@gmail.com', password: 'test5test5')
+    user = User.create(email: 'test5@gmail.com')
     expect(page).to have_link('Sign in with Google')
     click_on 'Sign in with Google'
     expect(current_path).to eq(dashboard_index_path)
@@ -19,7 +19,7 @@ RSpec.describe 'new user session' do
   end
 
   xit 'allows user access after sign in ' do
-    user = User.create(email: 'test5@gmail.com', password: 'test5test5')
+    user = User.create(email: 'test5@gmail.com')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     user.authenticate(user.password)
     visit dashboard_index_path
@@ -27,7 +27,7 @@ RSpec.describe 'new user session' do
   end
 
   xit 'will redirect the user if user is already logged in' do
-    user = User.create(email: 'test5@gmail.com', password: 'test5test5')
+    user = User.create(email: 'test5@gmail.com')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     user.authenticate(user.password)
 
@@ -39,7 +39,7 @@ RSpec.describe 'new user session' do
   xit 'user is logged out if click_on logout' do
     visit new_user_session_path
 
-    User.create(email: 'test5@gmail.com', password: 'test5test5')
+    User.create(email: 'test5@gmail.com')
 
     fill_in 'email', with: 'test5@gmail.com'
     fill_in 'password', with: 'test5test5'
@@ -50,7 +50,7 @@ RSpec.describe 'new user session' do
   end
 
   xit 'will kick back if incorrect login' do
-    User.create(email: 'test5@gmail.com', password: 'test5test5')
+    User.create(email: 'test5@gmail.com')
     visit new_user_session_path
 
     fill_in 'email', with: 'test4@gmail.com'

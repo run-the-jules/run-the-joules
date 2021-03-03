@@ -6,6 +6,7 @@ class Users::DashboardController < ApplicationController
     params[:id] = current_user.id
     if current_user.friends
        @friends = UsersFacade.friends_usage(current_user.friends)
+       binding.pry
     end
     begin
       if params[:referral]

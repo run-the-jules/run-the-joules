@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'users facade' do
   context 'instance methods' do
     it 'returns a users usage' do
-      user = User.create(email: 'test5@gmail.com', password: 'test5test5', household_size: 3, id: 1)
+      user = User.create(email: 'test5@gmail.com', household_size: 3, id: 1)
 
       usage_stub = File.read('spec/fixtures/usage_data.json')
       stub_request(:get, /usages/)

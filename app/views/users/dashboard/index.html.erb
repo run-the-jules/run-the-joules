@@ -17,16 +17,18 @@
         <p> My Monthly Points </p>
       </header>
       <div class="grid grid-cols-2 gap-12 md:gap-12 md:grid-cols-2 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
-        <%= render partial: "monthly", collection: @data_info_usage %>
+        <%= render partial: "monthly", collection: @data_info_usage, as: :month %>
       </div>
     </section>
-    <section class="parties_im_invited_to bg-gray-200">
-      <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
-        <h3> My Friends Monthly Points </h3>
-      </header>
-      <div class="grid grid-cols-2 gap-12 md:gap-12 md:grid-cols-2 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
-      <%= render partial: "monthly", collection: current_user.friends %>
-      </div>
-    </section>
+    <% if @friends.first != nil %>
+      <section class="parties_im_invited_to bg-gray-200">
+        <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
+          <h3> My Friends Monthly Points </h3>
+        </header>
+        <div class="grid grid-cols-2 gap-12 md:gap-12 md:grid-cols-2 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
+        <%= render partial: "monthly", collection: @friends, as: :month %>
+        </div>
+      </section>
+    <% end %>
   </div>        
 </div>
