@@ -67,4 +67,27 @@ describe 'users service' do
     expect(response).to have_key(:meter_uid)
   end
 
+  it 'can get usages' do
+
+    user = User.create(id: 1, email: 'user@example.com',
+    full_name: 'Tim Tool Man Taylor',
+    household_size: 3)
+
+    usages = File.read('spec/fixtures/usages.json')
+    stub_request(:get, /get_bills/).to_return(
+      status: 200, body: usages
+    )
+
+    response = UsersService.get_usages(user.id)
+
+    expect(response).to have_key(:data)
+    expect(response[:data].first).to have_key(:id)
+    expect(response[:data].first).to have_key(:attributes)
+    expect(response[:data].first[:attributes]).to have_key(:user_id)
+    expect(response[:data].first[:attributes]).to have_key(:kwh)
+    expect(response[:data].first[:attributes]).to have_key(:meter_id)
+
+
+  end
+
 end
