@@ -31,9 +31,20 @@ describe 'dashboard' do
       expect(page).to have_content('Xcel Energy')
       expect(page).to have_content('Atlantic City Electric')
     end
+
+    it 'redirects if you are signed in', :vcr do
+      user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
+      full_name: 'Catherine Dean', household_size: 5)
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
+        login_as user2
+
+        visit new_user_session_path
+
+        expect(current_path).to eq(dashboard_index_path)
+    end
   end
 
-  describe 'redirect path', :vcr do
+  describe 'redirect path' do
     it 'redirects to edit page if user has not entered household_size' do
       user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
                            full_name: 'Catherine Dean')
