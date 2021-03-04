@@ -1,20 +1,36 @@
 <h1>Welcome, <%= current_user.full_name %></h1>
 
-<%= form_tag(utilities_path, method: "get") do %>
-      <%= select_tag(:provider, options_for_select(provider_list.map {|utility| [utility[:utility_name], utility[:id]]}), {class: "select-field"}) %>
-      <%= submit_tag('Authorize Provider', class: "button") %>
-    <% end %>
+<%= form_with url: utilities_path, method: :get, local: true do |f| %>
+  <%= f.select :utility, provider_list.map {|utility| [utility[:attributes][:name], utility[:attributes][:id]]}, prompt: "select-field" %>
+  <%= f.submit 'Authorize Provider', class: "button rounded-lg px-8 " %>
+<% end %>
 
 
 <h3>Your Points:</h3>
 <h2>Total<%=current_user.total_points %></h2>
 
-<h2>Monthly Points: 
-<% if @data_info_usage %>
-  <% @data_info_usage.each do |month| %>
-                        <%= month.monthly_points %>
-                      <% end %></h2>
-  <h2><% @data_info_usage.each do |month| %>
-        <%= month.end_date.strftime('%B') %>'s usage: <%= month.kwh %> kwh</h2>
-      <% end %>
-<% end %>
+
+<div class="panels container bg-gray-200 w-full mx-auto type-page rounded-lg">
+  <div class="grid grid-cols-auto gap-12 md:gap-12 md:grid-cols-auto rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
+    <% if @data_info_usage && @data_info_usage.first != nil %>
+      <section class="my_parties bg-gray-200">
+        <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
+          <p> My Monthly Points </p>
+        </header>
+        <div class="grid gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
+          <%= render partial: "monthly", collection: @data_info_usage, as: :month %>
+        </div>
+      </section>
+    <% end %>
+    <% if @friends.first != nil %>
+      <section class="parties_im_invited_to bg-gray-200">
+        <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
+          <h3> My Friends Monthly Points </h3>
+        </header>
+        <div class="grid  gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
+        <%= render partial: "monthly", collection: @friends, as: :month %>
+        </div>
+      </section>
+    <% end %>
+  </div>        
+</div>

@@ -1,9 +1,6 @@
 module ApplicationHelper
   def provider_list
-    begin
-      UsersService.fetch_utilities[:data]
-    rescue
-      [{"nil" => "nil"}]
-    end
+    UsersService.fetch_utilities[:data]
+    # rescue [{"attributes" => {"name" => "Utilities not found", "id" => "nil"}}]
   end
 end

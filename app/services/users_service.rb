@@ -1,7 +1,14 @@
 class UsersService
   class << self
     def call_utility(id)
-      response = conn.get("/api/v1/usages") do |request|
+      response = conn.get("/api/v1/usages/#{id}") do |request|
+        request.params[:id] = id
+      end
+      parse_data(response)
+    end
+
+    def get_friends(id)
+      response = conn.get("/api/v1/friendships") do |request|
         request.params[:id] = id
       end
       parse_data(response)
@@ -13,16 +20,17 @@ class UsersService
     end
 
     def new_user_utility(email, utility)
-      response = conn.get('/api/v1/new_user') do |request|
+      response = conn.get('/api/v1/new_users') do |request|
         request.params[:email] = email
         request.params[:utility] = utility
       end
-      parse_data(response)
+      response.body
     end
 
-    def get_meters(referral)
+    def get_meters(params)
       response = conn.get('/api/v1/get_meters') do |request|
-        request.params[:referral] = referral
+        request.params[:referral] = params[:referral]
+        request.params[:id] = params[:id]
       end
       parse_data(response)
     end
@@ -37,7 +45,7 @@ class UsersService
     private
 
     def conn
-      Faraday.new(ENV['BACKEND_API'])
+      Faraday.new("https://jules-api.herokuapp.com")
     end
 
     def parse_data(data)
