@@ -10,6 +10,7 @@ class Users::FriendsController < ApplicationController
 
     if friend
       # hit backend endpoint to create follow relationship
+      FriendsFacade.create_friendship(current_user.id, friend.id)
       flash[:succes] = "You are now following #{friend.full_name}!"
       redirect_to user_friends_path(current_user)
     else
