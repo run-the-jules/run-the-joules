@@ -25,16 +25,15 @@ RSpec.describe "Friends show page" do
 
       friends_stub = File.read('spec/fixtures/friends_2.json')
       
-      stub_request(:get, "/api/v1/friendships?user_id=1").to_return(
+      stub_request(:get, /friendships/).to_return(
         status: 200, body: friends_stub
       )
-
 
       visit user_friends_path(@leslie)
     end
 
 
-    it "Lists a user's friends and their stats" do
+    it "lists a user's friends and their stats" do
 
       expect(page).to have_content(@ron.full_name)
       expect(page).to have_content(@anne.full_name)
@@ -48,7 +47,7 @@ RSpec.describe "Friends show page" do
         click_button('Add')
       end
 
-      expect(page).to have_content("You're now following #{@ben.full_name}!")
+      expect(page).to have_content("You are now following #{@ben.full_name}!")
 
       within("#user-#{@ben.id}-section") do
         expect(page).to have_content("5")
