@@ -11,19 +11,21 @@
 
 
 <div class="panels container bg-gray-200 w-full mx-auto type-page rounded-lg">
-  <div class="grid grid-cols-auto gap-12 md:gap-12 md:grid-cols-auto rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
-  <section class="my_parties bg-gray-200">
+  <div class="grid grid-cols-2 gap-12 md:gap-12 md:grid-cols-auto rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
+  <section class="my-usages bg-gray-200">
   <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
   <p> My Monthly Points </p>
   </header>
     <% if @data_info_usage %>
         <div class="grid gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
-        <%= column_chart(@users_usages.map { |usage| 
-        [User.find(usage[:attributes][:user_id]).full_name, usage[:attributes][:kwh]]}) %>
-          # <%= render partial: "monthly", object: @data_info_usage[:user_usage], as: :month %>
+        <% friend_count = @data_info_usage[:friends].count %>
+        <% friend_count.times do %>
+          <%= column_chart(@users_usages.map { |usage| 
+          [User.find(usage[:attributes][:user_id]).full_name, usage[:attributes][:kwh]]}) %>
+        <% end %>
         </div>
       <% end %>
-      </section>
+    </section>
 
       <section class="parties_im_invited_to bg-gray-200">
         <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
@@ -34,7 +36,6 @@
         <% @data_info_usage[:friends].each do |friend| %>
           <%= column_chart [[friend.user.full_name, friend.monthly_points]] %>
         <% end %>
-        # <%= render partial: "monthly", collection: @data_info_usage[:friends], as: :month %>
         </div>
         <% end %>
       </section>

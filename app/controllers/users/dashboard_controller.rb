@@ -6,7 +6,6 @@ class Users::DashboardController < ApplicationController
     begin
       @data_info_usage = DashboardFacade.build_usages(params, current_user)
       @users_usages = UsersService.call_utility(current_user.id)[:data]
-      binding.pry
     rescue
     end
   end
