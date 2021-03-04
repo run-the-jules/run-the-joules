@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Thu, 04 Mar 2021 05:08:49 GMT
+      - Thu, 04 Mar 2021 23:49:01 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fe73477b-3429-44c8-a6d7-8784a7e794e7
+      - 320eed18-f0bd-43b1-991b-b7afbfa27ef3
       X-Runtime:
-      - '0.043523'
+      - '0.013790'
       Transfer-Encoding:
       - chunked
       Via:
@@ -41,7 +41,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":null,"type":"friend_usage","attributes":{"user_id":1,"end_date":null,"user_kwh":900,"friends_data":[{"friend_id":4,"kwh_usage":900,"end_date":null},{"friend_id":4,"kwh_usage":900,"end_date":null},{"friend_id":4,"kwh_usage":900,"end_date":null},{"friend_id":2,"kwh_usage":743,"end_date":"2021-02-28"},{"friend_id":3,"kwh_usage":743,"end_date":"2021-02-28"},{"friend_id":4,"kwh_usage":900,"end_date":null}]}}}'
-  recorded_at: Thu, 04 Mar 2021 05:08:50 GMT
+  recorded_at: Thu, 04 Mar 2021 23:49:01 GMT
 - request:
     method: get
     uri: https://jules-api.herokuapp.com/api/v1/providers
@@ -63,7 +63,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Thu, 04 Mar 2021 05:08:50 GMT
+      - Thu, 04 Mar 2021 23:49:01 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -73,9 +73,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ffd54de5-fc17-48b4-8aa6-8a69380c4928
+      - 7a665806-c6d7-4a3c-9f9d-6bb6ff247177
       X-Runtime:
-      - '0.335959'
+      - '0.365868'
       Transfer-Encoding:
       - chunked
       Via:
@@ -112,7 +112,7 @@ http_interactions:
         Francisco Public Utilities Commission"}},{"id":"SMUD","type":"providers","attributes":{"id":"SMUD","name":"Sacramento
         Municipal Utility District"}},{"id":"XCEL","type":"providers","attributes":{"id":"XCEL","name":"Xcel
         Energy"}}]}'
-  recorded_at: Thu, 04 Mar 2021 05:08:51 GMT
+  recorded_at: Thu, 04 Mar 2021 23:49:02 GMT
 - request:
     method: get
     uri: https://jules-api.herokuapp.com/api/v1/friendships/1
@@ -134,7 +134,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Thu, 04 Mar 2021 05:08:51 GMT
+      - Thu, 04 Mar 2021 23:49:01 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -144,9 +144,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 15296384-19fd-4e42-90df-c70a96515d5a
+      - 8f06cf9b-8a2f-48ab-b981-6707319e6dcc
       X-Runtime:
-      - '0.022429'
+      - '0.007815'
       Transfer-Encoding:
       - chunked
       Via:
@@ -154,7 +154,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"3","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"4","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"5","type":"friendship","attributes":{"user_id":"1","following_id":"2"}},{"id":"6","type":"friendship","attributes":{"user_id":"1","following_id":"3"}},{"id":"7","type":"friendship","attributes":{"user_id":"1","following_id":"4"}}]}'
-  recorded_at: Thu, 04 Mar 2021 05:08:52 GMT
+  recorded_at: Thu, 04 Mar 2021 23:49:02 GMT
 - request:
     method: get
     uri: https://jules-api.herokuapp.com/api/v1/friendships/1
@@ -176,7 +176,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Thu, 04 Mar 2021 05:08:51 GMT
+      - Thu, 04 Mar 2021 23:49:02 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -186,9 +186,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d6c0329c-2ed4-45be-9c87-9cd3ce3789c4
+      - 2a00e5af-2109-4f3c-a59c-f2e98d1a1ab5
       X-Runtime:
-      - '0.032690'
+      - '0.006079'
       Transfer-Encoding:
       - chunked
       Via:
@@ -196,5 +196,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"3","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"4","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"5","type":"friendship","attributes":{"user_id":"1","following_id":"2"}},{"id":"6","type":"friendship","attributes":{"user_id":"1","following_id":"3"}},{"id":"7","type":"friendship","attributes":{"user_id":"1","following_id":"4"}}]}'
-  recorded_at: Thu, 04 Mar 2021 05:08:52 GMT
+  recorded_at: Thu, 04 Mar 2021 23:49:02 GMT
 recorded_with: VCR 6.0.0
