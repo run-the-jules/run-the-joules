@@ -66,7 +66,7 @@ This application allows a user to sign up/sign in with google, and then proceed 
 ## Schema
 
 - Schema design is ready to be merged to main.
-  [Figma wireframs](https://www.figma.com/file/cH4LowfeEHCkvWQLVf8NJH/Untitled?node-id=3%3A197)
+  [Figma wireframes](https://www.figma.com/file/cH4LowfeEHCkvWQLVf8NJH/Untitled?node-id=3%3A197)
 See the [open issues](https://github.com/run-the-jules/issues) for a list of proposed features (and known issues).
 
 

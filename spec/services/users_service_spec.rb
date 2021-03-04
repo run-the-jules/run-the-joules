@@ -27,12 +27,13 @@ describe 'users service' do
 
     response = UsersService.get_friends(@user.id)
     expect(response).to have_key(:data)
-    expect(response[:data]).to have_key(:attributes)
-    expect(response[:data][:attributes]).to have_key(:user_id)
-    expect(response[:data][:attributes]).to have_key(:user_kwh)
-    expect(response[:data][:attributes]).to have_key(:friends_data)
-    expect(response[:data][:attributes][:friends_data].first).to have_key(:friend_id)
-    expect(response[:data][:attributes][:friends_data].first).to have_key(:kwh_usage)
+
+    response[:data].each do |friendship|
+      expect(friendship).to have_key(:attributes)
+      expect(friendship).to have_key(:id)
+      expect(friendship[:attributes]).to have_key(:user_id)
+      expect(friendship[:attributes]).to have_key(:following_id)
+    end
   end
 
   it 'can get url' do
@@ -81,13 +82,16 @@ describe 'users service' do
     response = UsersService.get_usages(user.id)
 
     expect(response).to have_key(:data)
-    expect(response[:data].first).to have_key(:id)
-    expect(response[:data].first).to have_key(:attributes)
-    expect(response[:data].first[:attributes]).to have_key(:user_id)
-    expect(response[:data].first[:attributes]).to have_key(:kwh)
-    expect(response[:data].first[:attributes]).to have_key(:meter_id)
+    expect(response[:data]).to have_key(:id)
+    expect(response[:data]).to have_key(:attributes)
+    expect(response[:data][:attributes]).to have_key(:user_id)
+    expect(response[:data][:attributes]).to have_key(:user_kwh)
+    expect(response[:data][:attributes]).to have_key(:end_date)
 
-
+    response[:data][:attributes][:friends_data].each do |friend|
+      expect(friend).to have_key(:friend_id)
+      expect(friend).to have_key(:kwh_usage)
+      expect(friend).to have_key(:end_date)
+    end
   end
-
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :dashboard, module: :users, only: [:index]
+  resources :referral, module: :users, only: [:index]
 
   resources :utilities, only: [:index], as: 'utilities'
 

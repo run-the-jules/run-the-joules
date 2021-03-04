@@ -8,7 +8,9 @@ class User < ApplicationRecord
     create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
   end
 
-  def find_friends
-    friends_data = UsersService.get_friends(self.id)
+  def friends
+    friendships = UsersService.get_friends(self.id)[:data]
+    friend_ids = friendships.map {|friendship| friendship[:attributes][:following_id]}
+    User.where(id: friend_ids)
   end
 end

@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_02_26_012122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uid"
-    t.string "password"
     t.string "avatar_url"
     t.string "full_name"
     t.integer "total_points"

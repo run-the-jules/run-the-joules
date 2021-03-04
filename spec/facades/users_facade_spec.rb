@@ -21,7 +21,7 @@ describe 'users facade' do
       user = User.create(email: 'test5@gmail.com', household_size: 3, id: 1)
       user2 = User.create(email: 'test5@gmail.com', household_size: 3, id: 4)
       usage_stub_3 = File.read('spec/fixtures/friends.json')
-      stub_request(:get, /friendship/).to_return(
+      stub_request(:get, /friendships/).to_return(
         status: 200, body: usage_stub_3
       )
       usage_stub = File.read('spec/fixtures/usage_data.json')

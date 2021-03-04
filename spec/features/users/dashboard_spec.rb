@@ -3,12 +3,22 @@ require 'rails_helper'
 describe 'dashboard' do
   describe 'happy path' do
     before :each do
-      @user = User.create(household_size: 3, email: 'test5@gmail.com', total_points: 150,
-                          full_name: 'Tim Tyrell', id: 1)
+      @user = User.create!(id: 1, email: 'test83@gmail.com', total_points: 150,
+      full_name: 'Catherine Dean', household_size: 5)
+      user2 = User.create!(id: 2, email: 'test48@gmail.com', total_points: 150,
+      full_name: 'Catherine Dean', household_size: 1)
+      user3 = User.create!(id: 3, email: 'test28@gmail.com', total_points: 150,
+      full_name: 'Catherine Dean', household_size: 8)
+      user4 = User.create!(id: 4, email: 'test81@gmail.com', total_points: 150,
+      full_name: 'Catherine Dean', household_size: 2)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
-      usage_stub_2 = File.read('spec/fixtures/usage_data.json')
+      friendships = File.read('spec/fixtures/friends.json')
       stub_request(:get, /friendship/).to_return(
+        status: 200, body: friendships
+      )
+      usage_stub_2 = File.read('spec/fixtures/usage_data.json')
+      stub_request(:get, /friendships?user_id/).to_return(
         status: 200, body: usage_stub_2
       )
     end
@@ -35,7 +45,7 @@ describe 'dashboard' do
   
   describe 'it can redirect if already signed in' do
     it 'redirects if you are signed in', :vcr do
-      user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
+      user2 = User.create!(id: 1, email: 'test8@gmail.com', total_points: 150,
       full_name: 'Catherine Dean', household_size: 5)
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
         login_as user2
@@ -47,7 +57,7 @@ describe 'dashboard' do
 
 
     it 'redirects if signed in', :vcr do
-      user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
+      user2 = User.create!(id: 1, email: 'test8@gmail.com', total_points: 150,
       full_name: 'Catherine Dean', household_size: 5)
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
         login_as user2
