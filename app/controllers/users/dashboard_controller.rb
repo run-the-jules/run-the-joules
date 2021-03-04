@@ -5,6 +5,8 @@ class Users::DashboardController < ApplicationController
   def index
     begin
       @data_info_usage = DashboardFacade.build_usages(params, current_user)
+      @users_usages = UsersService.call_utility(current_user.id)[:data]
+      binding.pry
     rescue
     end
   end

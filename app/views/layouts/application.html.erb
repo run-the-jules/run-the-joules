@@ -6,6 +6,9 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= yield :charts_js %>
     <style>
       .flash__alert   { color: red; }
       .flash__notice  { color: blue; }
@@ -52,7 +55,5 @@
         </li>
       </ul>
     </footer>
-    <%= javascript_include_tag 'application' %>
-
   </body>
 </html>
