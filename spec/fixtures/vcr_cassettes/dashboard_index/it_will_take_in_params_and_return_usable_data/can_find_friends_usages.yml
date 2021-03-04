@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://jules-api.herokuapp.com/api/v1/usages/441?id=441
+    uri: https://jules-api.herokuapp.com/api/v1/friendships?user_id=1
     body:
       encoding: US-ASCII
       string: ''
@@ -21,27 +21,27 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 03 Mar 2021 15:33:42 GMT
+      - Thu, 04 Mar 2021 05:09:30 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      - W/"4b619016e8ceeee127bcf458e076f308"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 19e4157f-b332-4305-bc75-0eb175befc91
+      - b18982b8-3033-4a59-a695-8c58200fd791
       X-Runtime:
-      - '0.273740'
+      - '0.020230'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":[]}'
-  recorded_at: Wed, 03 Mar 2021 15:33:42 GMT
+      string: '{"data":{"id":null,"type":"friend_usage","attributes":{"user_id":1,"end_date":null,"user_kwh":900,"friends_data":[{"friend_id":4,"kwh_usage":900,"end_date":null},{"friend_id":4,"kwh_usage":900,"end_date":null},{"friend_id":4,"kwh_usage":900,"end_date":null},{"friend_id":2,"kwh_usage":743,"end_date":"2021-02-28"},{"friend_id":3,"kwh_usage":743,"end_date":"2021-02-28"},{"friend_id":4,"kwh_usage":900,"end_date":null}]}}}'
+  recorded_at: Thu, 04 Mar 2021 05:09:30 GMT
 - request:
     method: get
     uri: https://jules-api.herokuapp.com/api/v1/providers
@@ -63,7 +63,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Wed, 03 Mar 2021 15:33:43 GMT
+      - Thu, 04 Mar 2021 05:09:31 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -73,9 +73,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 545974c3-a732-404c-b75c-4da09402d971
+      - 3a9ef47c-35d0-4d3b-b553-0cfe6c838300
       X-Runtime:
-      - '0.474766'
+      - '0.373438'
       Transfer-Encoding:
       - chunked
       Via:
@@ -112,5 +112,89 @@ http_interactions:
         Francisco Public Utilities Commission"}},{"id":"SMUD","type":"providers","attributes":{"id":"SMUD","name":"Sacramento
         Municipal Utility District"}},{"id":"XCEL","type":"providers","attributes":{"id":"XCEL","name":"Xcel
         Energy"}}]}'
-  recorded_at: Wed, 03 Mar 2021 15:33:43 GMT
+  recorded_at: Thu, 04 Mar 2021 05:09:31 GMT
+- request:
+    method: get
+    uri: https://jules-api.herokuapp.com/api/v1/friendships/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 04 Mar 2021 05:09:31 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"519333f79f06aee39b5e7bdb9154e55c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 20a44c9c-3610-4e5a-a919-de9560eb682c
+      X-Runtime:
+      - '0.016350'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"3","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"4","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"5","type":"friendship","attributes":{"user_id":"1","following_id":"2"}},{"id":"6","type":"friendship","attributes":{"user_id":"1","following_id":"3"}},{"id":"7","type":"friendship","attributes":{"user_id":"1","following_id":"4"}}]}'
+  recorded_at: Thu, 04 Mar 2021 05:09:32 GMT
+- request:
+    method: get
+    uri: https://jules-api.herokuapp.com/api/v1/friendships/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Thu, 04 Mar 2021 05:09:32 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"519333f79f06aee39b5e7bdb9154e55c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6042102e-4878-420a-93b9-1c3839470ea7
+      X-Runtime:
+      - '0.013282'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"3","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"4","type":"friendship","attributes":{"user_id":"1","following_id":"4"}},{"id":"5","type":"friendship","attributes":{"user_id":"1","following_id":"2"}},{"id":"6","type":"friendship","attributes":{"user_id":"1","following_id":"3"}},{"id":"7","type":"friendship","attributes":{"user_id":"1","following_id":"4"}}]}'
+  recorded_at: Thu, 04 Mar 2021 05:09:33 GMT
 recorded_with: VCR 6.0.0

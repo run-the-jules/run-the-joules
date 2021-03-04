@@ -4,6 +4,8 @@
     <header class="flex flex-col items-center">
       <%= "Your Friends List" %>
     </header>
-    <%= render(partial: "users/dashboard/friends/friend", collection: current_user.friends) || "You currently have no friends." %>
+    <% if current_user.friends %>
+      <%= render(partial: "users/dashboard/friends/friend", collection: current_user.friends) || "You currently have no friends." %>
+    <% end %>
   </div>
 </div>

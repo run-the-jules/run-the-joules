@@ -8,9 +8,7 @@ class UsersService
     end
 
     def get_friends(id)
-      response = conn.get("/api/v1/friendships") do |request|
-        request.params[:id] = id
-      end
+      response = conn.get("/api/v1/friendships/#{id}")
       parse_data(response)
     end
 
@@ -35,13 +33,13 @@ class UsersService
       parse_data(response)
     end
 
-    def get_usages(user_id)
-      response = conn.get('/api/v1/get_bills') do |request|
-        request.params[:user_id] = user_id
+    def get_usages(id)
+      response = conn.get('/api/v1/friendships') do |request|
+        request.params[:user_id] = id
       end
       parse_data(response)
     end
-
+    
     private
 
     def conn

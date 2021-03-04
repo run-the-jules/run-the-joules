@@ -9,8 +9,8 @@ class User < ApplicationRecord
   end
 
   def friends
-    # friend_ids = UsersService.get_friends(self.id)
-    friend_ids = [4]
+    friendships = UsersService.get_friends(self.id)[:data]
+    friend_ids = friendships.map {|friendship| friendship[:attributes][:following_id]}
     User.where(id: friend_ids)
   end
 end
