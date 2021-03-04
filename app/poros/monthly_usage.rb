@@ -5,15 +5,19 @@ class MonthlyUsage
               :user
 
   def initialize(usage_data)
-    @end_date = usage_data[:end_date]
-    @kwh = usage_data[:kwh].to_i
-    @user = User.find(usage_data[:user_id])
+    @end_date = (usage_data[:end_date] || Date.today)
+    @kwh = (usage_data[:kwh_usage].to_i || nil)
+    @user = User.find(usage_data[:user_id] || usage_data[:friend_id])
     @monthly_points = calculate_monthly_points
   end
 
   def calculate_monthly_points
-    points.select do |point|
-      return point[:points] if (@kwh / @user.household_size) < point[:kwh]
+    if @kwh
+      points.select do |point|
+        return point[:points] if (@kwh / @user.household_size) < point[:kwh]
+      end
+    else
+      0
     end
   end
 

@@ -16,12 +16,6 @@
   </head>
 
   <body class="bg-gray-50 flex flex-col min-h-screen">
-    <% if flash.any? %>
-      <% flash.each do |key, value| -%>
-        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
-      <% end -%>
-    <% end %>
-
     <section id="flash-messages" >
       <% flash.each do |notice, messages| %>
         <% if messages.class == Array %>
