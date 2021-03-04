@@ -5,21 +5,9 @@ class Users::DashboardController < ApplicationController
   def index
     begin
       @data_info_usage = DashboardFacade.build_usages(params, current_user)
-
     rescue
     end
   end
-
-  # def index
-  #   params[:id] = current_user.id
-  #   if current_user.friends
-  #     @friends = current_user.friends.flat_map do |friend|
-  #       begin UsersFacade.find_usage(friend.id)
-  #       rescue
-  #       end
-  #     end
-  #   end
-  # end
 
   private
 
