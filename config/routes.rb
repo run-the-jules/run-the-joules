@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users, module: :users, only: %i[create destroy edit update] do
     # member { get 'dashboard' }
     resources :friends, only: [:index]
+    get "users/search", to: "friends#search"
   end
 
   resources :dashboard, module: :users, only: [:index]

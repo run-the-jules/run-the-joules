@@ -1,5 +1,10 @@
 <h1>Friends</h1>
 
-<section id="">
+<%= render partial: friend_search %>
 
-</section>
+<% @friends.each do |friend_data| %>
+  <section id="user-<%= friend_data.user.id %>-section">
+    <h3><%= friend_data.user.full_name %></h3>
+
+  </section>
+<% end %>

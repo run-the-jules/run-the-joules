@@ -10,6 +10,5 @@ class User < ApplicationRecord
 
   def find_friends
     friends_data = UsersService.get_friends(self.id)
-    require 'pry'; binding.pry
   end
 end

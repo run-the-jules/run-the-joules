@@ -7,7 +7,7 @@ class MonthlyUsage
   def initialize(usage_data)
     @end_date = usage_data[:end_date]
     @kwh = usage_data[:kwh].to_i
-    @user = User.find(usage_data[:user_id])
+    @user = User.find(usage_data[:user_id] || usage_data[:friend_id])
     @monthly_points = calculate_monthly_points
   end
 

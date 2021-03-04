@@ -11,8 +11,12 @@ class UsersService
       response = conn.get("/api/v1/friendships") do |request|
         request.params[:user_id] = id
       end
-      require 'pry'; binding.pry
-      parse_data(response)
+
+      data = parse_data(response)
+      
+      data[:data][:attributes][:friends_data].map do |data|
+        MonthlyUsage.new(data)
+      end
     end
 
     def fetch_utilities
