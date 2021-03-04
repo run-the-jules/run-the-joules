@@ -5,10 +5,10 @@
         <%= link_to "Home", root_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %>
       </li>
       <li class="flex-none inline-flex">
-        <%= link_to "Log In", new_user_session_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
+        <%= link_to "Log In", user_google_oauth2_omniauth_authorize_path, method: :post, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
       </li>
       <li class="flex-none inline-flex">
-        <%= link_to "Sign Up", registration_path, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
+        <%= link_to "Sign Up", user_google_oauth2_omniauth_authorize_path, method: :post, class: "button rounded-lg py-1 md:py-2 px-5 bg-blue-200 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white transition duration-150-ease-in-out" %><br>
       </li>
     </ul>
   </section>

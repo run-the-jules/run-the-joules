@@ -23,7 +23,7 @@ RSpec.describe "Friends show page" do
 
       login_as(@leslie)
 
-      friends_stub = File.read('spec/fixtures/friends_2.json')
+      friends_stub = File.read('spec/fixtures/friends.json')
       
       stub_request(:get, /friendships/).to_return(
         status: 200, body: friends_stub

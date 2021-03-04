@@ -9,7 +9,39 @@
           }
       },
       {
-          "id": "2",
+          "id": "3",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "4"
+          }
+      },
+      {
+          "id": "4",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "4"
+          }
+      },
+      {
+          "id": "5",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "2"
+          }
+      },
+      {
+          "id": "6",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "3"
+          }
+      },
+      {
+          "id": "7",
           "type": "friendship",
           "attributes": {
               "user_id": "1",

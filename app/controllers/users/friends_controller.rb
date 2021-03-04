@@ -2,7 +2,7 @@ class Users::FriendsController < ApplicationController
   def index
 
     # needs to get most recent record for each friend -- backend endpoint?
-    @friends = current_user.find_friends
+    @friends = current_user.friends
   end
 
   def search
