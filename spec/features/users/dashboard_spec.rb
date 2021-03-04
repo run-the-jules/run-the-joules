@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'dashboard' do
   describe 'happy path' do
     before :each do
-      @user = User.create(household_size: 3, email: 'test5@gmail.com', password: 'test5test5', total_points: 150,
+      @user = User.create(household_size: 3, email: 'test5@gmail.com', total_points: 150,
                           full_name: 'Tim Tyrell', id: 1)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 

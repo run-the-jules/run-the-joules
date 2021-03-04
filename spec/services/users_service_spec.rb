@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'users service' do
   it 'returns utility info' do
     @user = User.create(id: 1, email: 'user@example.com',
-                        password: 'password',
                         full_name: 'Tim Tool Man Taylor',
                         household_size: 3)
     usage_stub = File.read('spec/fixtures/usage_data.json')
