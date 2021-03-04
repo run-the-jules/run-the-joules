@@ -1,16 +1,20 @@
 {
-    "data": {
-      "id": null,
-      "type": "friend_usage",
-      "attributes": {
-        "user_id": "1",
-        "user_kwh": 900,
-        "friends_data": [
-          {
-            "friend_id": 4,
-            "kwh_usage": 900
+  "data": [
+      {
+          "id": "1",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "4"
           }
-        ]
+      },
+      {
+          "id": "2",
+          "type": "friendship",
+          "attributes": {
+              "user_id": "1",
+              "following_id": "4"
+          }
       }
-    }
-  }
+  ]
+}
