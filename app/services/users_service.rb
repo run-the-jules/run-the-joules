@@ -9,8 +9,9 @@ class UsersService
 
     def get_friends(id)
       response = conn.get("/api/v1/friendships") do |request|
-        request.params[:id] = id
+        request.params[:user_id] = id
       end
+      require 'pry'; binding.pry
       parse_data(response)
     end
 

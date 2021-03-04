@@ -8,9 +8,8 @@ class User < ApplicationRecord
     create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
   end
 
-  def friends
-    # friend_ids = UsersService.get_friends(self.id)
-    friend_ids = [4]
-    User.where(id: friend_ids)
+  def find_friends
+    friends_data = UsersService.get_friends(self.id)
+    require 'pry'; binding.pry
   end
 end
