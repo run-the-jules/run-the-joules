@@ -1,0 +1,47 @@
+{
+  "data": {
+      "id": null,
+      "type": "friend_usage",
+      "attributes": {
+          "user_id": "1",
+          "user_kwh": 900,
+          "friends_data": [
+              {
+                  "friend_id": 4,
+                  "kwh_usage": 900,
+                  "end_date": "2021-02-19T23:00:00.000000-08:00"
+              },
+              {
+                  "friend_id": 4,
+                  "kwh_usage": 900,
+                  "end_date": "2021-02-19T23:00:00.000000-08:00"
+
+              },
+              {
+                  "friend_id": 4,
+                  "kwh_usage": 900,
+                  "end_date": "2021-02-19T23:00:00.000000-08:00"
+
+              },
+              {
+                  "friend_id": 2,
+                  "kwh_usage": 743,
+                  "end_date": "2021-02-19T23:00:00.000000-08:00"
+
+              },
+              {
+                  "friend_id": 3,
+                  "kwh_usage": 743,
+                  "end_date": "2021-02-19T23:00:00.000000-08:00"
+
+              },
+              {
+                  "friend_id": 4,
+                  "kwh_usage": 900,
+                  "end_date": "2021-02-19T23:00:00.000000-08:00"
+
+              }
+          ]
+      }
+  }
+}

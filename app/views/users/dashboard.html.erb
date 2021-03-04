@@ -13,3 +13,18 @@
 # <h2><% @data_info_usage.each do |month| %>
 #         <%= month.end_date.strftime('%B') %>'s usage: <%= month.kwh %> kwh</h2>
 #     <% end %>
+
+<section id="friend-section">
+
+<h2>Friends</h2>
+
+<%= render partial: "friends_search" %>
+
+<% @friends.each do |friend_data| %>
+  <section id="user-<%= friend_data.id %>-section">
+    <h3><%= friend_data.full_name %></h3>
+
+  </section>
+<% end %>
+
+</section>

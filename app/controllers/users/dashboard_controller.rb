@@ -5,6 +5,7 @@ class Users::DashboardController < ApplicationController
   def index
     begin
       @data_info_usage = DashboardFacade.build_usages(params, current_user)
+      @friends = current_user.friends
     rescue
     end
   end
