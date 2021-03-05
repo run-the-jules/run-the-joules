@@ -16,15 +16,10 @@ ActiveRecord::Schema.define(version: 2021_03_05_020919) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string "google_token"
-    t.string "utility_token"
-    t.string "password_digest"
     t.string "email"
-    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uid"
-    t.string "password"
     t.string "full_name"
     t.integer "total_points"
     t.integer "household_size"
