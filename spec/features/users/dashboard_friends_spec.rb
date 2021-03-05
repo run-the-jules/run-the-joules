@@ -42,36 +42,43 @@ RSpec.describe "Friends show page" do
 
     VCR.use_cassette("user_search") do
       it "lets user add friends" do
-        expect(page).to have_content("Add user")
-        fill_in "friend", with: @ben.email
-        click_button('Add')
+
+        within("#add-friend-section") do
+          fill_in :query, with: @ben.email
+          click_button('Follow Friend')
+        end
 
         expect(page).to have_content("You are now following #{@ben.full_name}!")
-
-        within("#user-#{@ben.id}-section") do
-          expect(page).to have_content("5")
-        end
+        expect(page).to have_content("#{@ben.full_name}: 5 points this month")
       end
     end
   end
   
   describe "(sad path)" do
+    before(:each) do
+      @ben = User.create!(household_size: 1, email: 'ben@pnr.gov', total_points: 5,
+      full_name: 'Ben Wyatt', id: 5)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@ben)
+      login_as(@ben)
+
+      visit dashboard_index_path
+    end
+
     VCR.use_cassette("missing_an_email") do
       it "user gets error when email doesn't exist" do
-        visit user_friend_path(1)
 
-        within('#add-user-panel') do
-          expect(page).to have_content("Add user")
-          fill_in "friend", with: "nobody@email.com"
-          click_button('Add')
+        within('#add-friend-section') do
+          fill_in :query, with: "nobody@email.com"
+          click_button('Follow Friend')
         end
       
-        expect(page).to have_content("We can't find a user with that email.")
+        expect(page).to have_content("User doesn't exist!")
       end
     end
 
-    xit "Provides a message that a user doesn't currently have friends if they haven't added anyone" do
-    
+    it "Provides a message that a user doesn't currently have friends if they haven't added anyone" do
+      expect(page).to have_content("You currently have no friends.")
     end
   end
 end
