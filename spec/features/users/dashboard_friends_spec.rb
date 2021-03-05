@@ -32,16 +32,16 @@ RSpec.describe "Friends show page" do
       visit dashboard_index_path
     end
 
-    VCR.use_cassette("users_friends") do
-      it "lists a user's friends and their stats" do
+    it "lists a user's friends and their stats" do
+      VCR.use_cassette("users_friends") do
         expect(page).to have_content("#{@ron.full_name}: 50 points this month")
         expect(page).to have_content("#{@anne.full_name}: 50 points this month")
         expect(page).to have_content("#{@tom.full_name}: 5 points this month")
       end
     end
 
-    VCR.use_cassette("user_search") do
-      it "lets user add friends" do
+    it "lets user add friends" do
+      VCR.use_cassette("user_search") do
 
         within("#add-friend-section") do
           fill_in :query, with: @ben.email
@@ -65,8 +65,8 @@ RSpec.describe "Friends show page" do
       visit dashboard_index_path
     end
 
-    VCR.use_cassette("missing_an_email") do
-      it "user gets error when email doesn't exist" do
+    it "user gets error when email doesn't exist" do
+      VCR.use_cassette("missing_an_email") do
 
         within('#add-friend-section') do
           fill_in :query, with: "nobody@email.com"

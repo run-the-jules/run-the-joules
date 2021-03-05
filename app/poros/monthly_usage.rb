@@ -14,7 +14,7 @@ class MonthlyUsage
   end
 
   def calculate_monthly_points
-    if @kwh
+    if @kwh > 0
       points.select do |point|
         return point[:points] if (@kwh / @user.household_size) < point[:kwh]
       end
