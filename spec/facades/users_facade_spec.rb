@@ -13,8 +13,8 @@ describe 'users facade' do
 
       expect(usage).to be_an(Array)
 
-      expect(usage.last.kwh).to eq(837)
-      expect(usage.last.monthly_points).to eq(75)
+      expect(usage.last.kwh).to eq(0)
+      expect(usage.last.monthly_points).to eq(100)
     end
 
     xit 'returns a friends usage' do
