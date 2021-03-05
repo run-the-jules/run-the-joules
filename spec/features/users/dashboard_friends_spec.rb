@@ -14,7 +14,7 @@ RSpec.describe "Friends show page" do
       full_name: 'Anne Perkins', id: 3)
   
       @tom = User.create!(household_size: 1, email: 'tom_h@example.com', total_points: 500,
-      full_name: 'Anne Haverford', id: 4)
+      full_name: 'Tom Haverford', id: 4)
 
       @ben = User.create!(household_size: 1, email: 'ben@pnr.gov', total_points: 5,
       full_name: 'Ben Wyatt', id: 5)
@@ -34,19 +34,17 @@ RSpec.describe "Friends show page" do
 
     VCR.use_cassette("users_friends") do
       it "lists a user's friends and their stats" do
-        expect(page).to have_content(@ron.full_name)
-        expect(page).to have_content(@anne.full_name)
-        expect(page).to have_content(@tom.full_name)
+        expect(page).to have_content("#{@ron.full_name}: 75 points this month")
+        expect(page).to have_content("#{@anne.full_name}: 5 points this month")
+        expect(page).to have_content("#{@tom.full_name}: 5 points this month")
       end
     end
 
     VCR.use_cassette("user_search") do
       it "lets user add friends" do
-        within('#friends-section') do
-          expect(page).to have_content("Add user")
-          fill_in "friend", with: @ben.email
-          click_button('Add')
-        end
+        expect(page).to have_content("Add user")
+        fill_in "friend", with: @ben.email
+        click_button('Add')
 
         expect(page).to have_content("You are now following #{@ben.full_name}!")
 
