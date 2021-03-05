@@ -39,6 +39,12 @@ class UsersService
       end
       parse_data(response)
     end
+
+    def create_friendship(follow_id, user_id)
+      response = conn.post('/api/v1/friendships') do |req|
+        req.body = {"friendship": {'user_id': user_id, 'following_id': follow_id }}
+      end
+    end
     
     private
 

@@ -8,6 +8,9 @@
 
 <% end %>
 
+<section id="add-friend-section">
+  <%= render partial: "friends_search"%>
+</section>
 
 <h3>Your Points:</h3>
 <h2>Total<%=current_user.total_points %></h2>
@@ -23,8 +26,10 @@
         <div class="grid gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
         <% friend_count = @data_info_usage[:friends].count %>
         <% friend_count.times do %>
-          <%= column_chart(@users_usages.map { |usage| 
-          [User.find(usage[:attributes][:user_id]).full_name, usage[:attributes][:kwh]]}) %>
+          <%= column_chart [@data_info_usage[:user_usage].name, @data_info_usage[:user_usage].monthly_points] %>
+          <section id="points-breakdown-section">
+            <p><b><%= @data_info_usage[:user_usage].name %></b>: <%= @data_info_usage[:user_usage].monthly_points %> points this month</p>
+          </section>
         <% end %>
         </div>
     <% else %>
@@ -32,7 +37,7 @@
     <% end %>
       </section>
 
-      <section class="parties_im_invited_to bg-gray-200">
+      <section id="friends-section" class="parties_im_invited_to bg-gray-200">
         <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
           <h3> My Friends Monthly Points </h3>
         </header>
@@ -40,9 +45,12 @@
         <div class="grid  gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
         <% @data_info_usage[:friends].each do |friend| %>
           <%= column_chart [[friend.user.full_name, friend.monthly_points]] %>
+          <section id="friend-points-breakdown-section">
+            <p><b><%= friend.user.full_name %></b>: <%= friend.monthly_points %> points this month</p>
+          </section>
         <% end %>
         </div>
-        <% end %>
+    <% end %>
       </section>
   </div>        
 </div>

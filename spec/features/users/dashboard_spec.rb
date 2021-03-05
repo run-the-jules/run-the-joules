@@ -31,9 +31,10 @@ describe 'dashboard' do
     end
 
     it 'has a drop down list of available utilities', :vcr do
-      usage_stub_1 = { :url => "https://utilityapi.com/authorize/iandouglas_turing?f=11014777-7efa-4aea-afac-96d032600cec"}.to_json
-      stub_request(:get, /new_user/)
-        .to_return(status: 200, body: usage_stub_1)
+      usage_stub_3 = File.read('spec/fixtures/utilities.json')
+      stub_request(:get, /friendships?user_id/).to_return(
+        status: 200, body: usage_stub_3
+      )
 
 
       visit dashboard_index_path
@@ -50,7 +51,7 @@ describe 'dashboard' do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
         login_as user2
 
-        visit new_user_session_path
+        visit root_path
 
         expect(current_path).to eq(dashboard_index_path)
     end
@@ -62,7 +63,7 @@ describe 'dashboard' do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
         login_as user2
 
-        visit new_user_session_path
+        visit root_path
 
         expect(current_path).to eq(dashboard_index_path)
     end
@@ -119,7 +120,7 @@ describe 'dashboard' do
       expect(current_path).to eq(edit_user_path(user2))
     end
 
-    xit 'it will get meters with a referral code' do
+    it 'it will get meters with a referral code' do
       user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
                            full_name: 'Catherine Dean', household_size: 5)
       user3 = User.create!(email: 'test28@gmail.com', total_points: 150,
@@ -154,7 +155,7 @@ describe 'dashboard' do
       expect(current_path).to eq(dashboard_index_path)
     end
 
-    xit 'current_user has friends', :vcr do
+    it 'current_user has friends', :vcr do
       user2 = User.create!(email: 'test8@gmail.com', total_points: 150,
                            full_name: 'Catherine Dean', household_size: 5)
                            user2 = User.create!(id: 4, email: 'test38@gmail.com', total_points: 150,

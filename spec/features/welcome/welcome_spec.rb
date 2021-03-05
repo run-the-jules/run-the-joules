@@ -9,4 +9,15 @@ RSpec.describe 'welcome page' do
     expect(page).to have_link('Log In')
     expect(page).to have_link('Home')
   end
+
+  it "redirects to dashboard if user is logged in" do
+    @leslie = User.create!(household_size: 4, email: 'somebody@example.com', total_points: 500,
+      full_name: 'Leslie Knope', id: 1)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@leslie)
+    login_as(@leslie)
+
+    visit root_path
+    expect(current_path).to eq(dashboard_index_path)
+  end
 end

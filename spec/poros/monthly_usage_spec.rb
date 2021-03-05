@@ -3,7 +3,8 @@ require 'rails_helper'
 describe 'monthly usage' do
   before :each do
     @user = User.create(id: 1, household_size: 4, email: 'test5@gmail.com', total_points: 150,
-    full_name: 'Tim Tyrell')
+      full_name: 'Tim Tyrell')
+
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
     @data = { user_id: @user.id,
@@ -30,10 +31,21 @@ describe 'monthly usage' do
     data2 = { user_id: @user.id,
               start: '2015-02-19T23:00:00.000000-08:00',
               end: '2015-02-20T00:00:00.000000-08:00',
-              kwh: '9809238403' }
+              kwh_usage: '9809238403' }
 
     usage = MonthlyUsage.new(data2)
+    
+    expect(usage.monthly_points).to eq(5)
+  end
 
-    expect(usage.monthly_points).to eq(100)
+  it 'returns zero if user has no kwh' do
+    data3 = { user_id: @user.id,
+              start_date: '2015-02-19T23:00:00.000000-08:00',
+              end_date: '2015-02-20T00:00:00.000000-08:00',
+              kwh_usage: nil }
+
+    monthly_usage = MonthlyUsage.new(data3)
+
+    expect(monthly_usage.monthly_points).to eq(0)
   end
 end
