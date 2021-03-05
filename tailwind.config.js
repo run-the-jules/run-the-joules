@@ -14,8 +14,13 @@ module.exports = {
     colors: {
       red: {
         DEFAULT: '#7F1D1D'
+      },
+      blue: {
+        light: '#759bcb',
+        dark: '#334486'
       }
-    }
+
+    },
     extend: {},
   },
   variants: {
