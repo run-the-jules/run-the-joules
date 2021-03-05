@@ -23,13 +23,6 @@ describe 'dashboard' do
       )
     end
 
-    it 'takes us to the user data', :vcr do
-      visit dashboard_index_path
-
-      expect(page).to have_content(@user.total_points)
-      expect(page).to have_content(@user.full_name)
-    end
-
     it 'has a drop down list of available utilities', :vcr do
       usage_stub_3 = File.read('spec/fixtures/utilities.json')
       stub_request(:get, /friendships?user_id/).to_return(
