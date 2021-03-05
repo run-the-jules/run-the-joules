@@ -34,7 +34,6 @@ RSpec.describe "Friends show page" do
 
     VCR.use_cassette("users_friends") do
       it "lists a user's friends and their stats" do
-save_and_open_page
         expect(page).to have_content(@ron.full_name)
         expect(page).to have_content(@anne.full_name)
         expect(page).to have_content(@tom.full_name)
