@@ -28,15 +28,17 @@
     <% end %>
       </section>
 
-      <section class="parties_im_invited_to bg-gray-200">
+      <section id="friends-section" class="parties_im_invited_to bg-gray-200">
         <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
           <h3> My Friends Monthly Points </h3>
+          <%= render partial: "friends_search"%>
         </header>
         <% if @data_info_usage %>
           <div class="grid  gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
           <%= render partial: "monthly", collection: @data_info_usage[:friends], as: :month %>
           </div>
         <% else %>
+        <% binding.pry %>
         <p>Add your friends to compare points</p>
     <% end %>
       </section>
