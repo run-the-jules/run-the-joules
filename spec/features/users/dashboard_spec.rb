@@ -62,7 +62,7 @@ describe 'dashboard' do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
         login_as user2
 
-        visit registration_path
+        visit new_user_session_path
 
         expect(current_path).to eq(dashboard_index_path)
     end

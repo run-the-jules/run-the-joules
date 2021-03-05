@@ -1,7 +1,7 @@
 <h1>Friends</h1>
-
-<%= render partial: "friends_search" %>
-
+<section id="add-user-panel">
+  <%= render partial: "friends_search" %>
+</section>
 <% @friends.each do |friend_data| %>
   <section id="user-<%= friend_data.id %>-section">
     <h3><%= friend_data.full_name %></h3>
