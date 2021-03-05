@@ -4,8 +4,8 @@ RSpec.describe 'welcome page' do
   it 'has a welcome message and brief description of the application' do
     visit root_path
 
-    expect(page).to have_content('Welcome to Run the Joules')
-    expect(page).to have_content('Run the Joules is an app that allows you to compare your energy usage with your friends!')
+    expect(page).to have_content('Run the Joules')
+    expect(page).to have_content('Track energy usage, earn points, and compete with neighbors. RTJ automatically syncs monthly usage data across dozens of utility providers.')
     expect(page).to have_link('Log In')
     expect(page).to have_link('Home')
   end
