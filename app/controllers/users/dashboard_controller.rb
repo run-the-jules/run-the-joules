@@ -4,6 +4,7 @@ class Users::DashboardController < ApplicationController
 
   def index
     begin
+      require 'pry'; binding.pry
       @data_info_usage = DashboardFacade.build_usages(params, current_user)
       @users_usages = UsersService.call_utility(current_user.id)[:data]
       @friends = current_user.friends

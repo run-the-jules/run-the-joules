@@ -34,8 +34,8 @@ RSpec.describe "Friends show page" do
 
     VCR.use_cassette("users_friends") do
       it "lists a user's friends and their stats" do
-        expect(page).to have_content("#{@ron.full_name}: 75 points this month")
-        expect(page).to have_content("#{@anne.full_name}: 5 points this month")
+        expect(page).to have_content("#{@ron.full_name}: 50 points this month")
+        expect(page).to have_content("#{@anne.full_name}: 50 points this month")
         expect(page).to have_content("#{@tom.full_name}: 5 points this month")
       end
     end

@@ -8,6 +8,9 @@
 
 <% end %>
 
+<section id="add-friend-section">
+  <%= render partial: "friends_search"%>
+</section>
 
 <h3>Your Points:</h3>
 <h2>Total<%=current_user.total_points %></h2>
@@ -37,7 +40,6 @@
       <section id="friends-section" class="parties_im_invited_to bg-gray-200">
         <header class="flex flex-col items-center bg-gray-200 font-bold rounded-lg text-2xl">
           <h3> My Friends Monthly Points </h3>
-          <%= render partial: "friends_search"%>
         </header>
     <% if @data_info_usage %>
         <div class="grid  gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
