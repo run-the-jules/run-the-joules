@@ -1,7 +1,12 @@
 
-<div class="grid w-full justify-items-center">
-  <section class='grid grid-gutter justify-items-center items-center rounded-lg border-solid border-4 p-11  bg-gray-200 border-gray-900'>
-    <h1 class="text-3xl">Welcome to Run the Joules!</h1>
-    <p class="text-xl">Run the Joules is an app that allows you to compare your energy usage with your friends!</p>
+<div class="grid w-full justify-items-center grid-cols-2 divide-x-50% divide-gray-500 space-x-6">
+  <section class='grid grid-gutter items-center rounded-lg p-11 border-gray-900 space-y-6 font-sans Roboto'>
+    <h1 class="text-left text-5xl font-bold text-red-700">Run the Joules</h1>
+    <p class="text-xl">Track energy usage, earn points, and compete with neighbors. RTJ automatically syncs monthly usage data across dozens of utility providers.</p>
+  </section>
+
+  <section class="relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12">
+    <%= image_tag("hero-image.png") %>
+
   </section>
 </div>
