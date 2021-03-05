@@ -10,5 +10,10 @@ class DashboardFacade
                 }
       usages
     end
+
+    def user_usage(params)
+      params[:kwh_usage] = params[:kwh]
+      MonthlyUsage.new(params)
+    end
   end
 end
