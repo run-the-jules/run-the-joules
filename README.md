@@ -6,7 +6,7 @@ Run The Jules is an application in which users can sign up and compare their ele
 
 <img width="1440" alt="Screen Shot 2021-03-05 at 9 45 30 AM" src="https://user-images.githubusercontent.com/64919819/110146211-87fd7300-7d97-11eb-89c4-4514dea7fdfb.png">
 
-## Video Walkthrough
+
 [![run-the-joules-walkthrough](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=NzIEC9a3fA0)
 
 
