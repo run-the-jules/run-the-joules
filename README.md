@@ -6,7 +6,7 @@ Run The Jules is an application in which users can sign up and compare their ele
 
 This project is deployed on:
 
-- [Heroku here](https://tranquil-garden-76939.herokuapp.com/)
+- [Heroku here](https://run-the-joules.herokuapp.com/)
 
 <!-- [AWS here](https://www.example.com) -->
 

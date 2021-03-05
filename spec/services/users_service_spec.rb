@@ -75,23 +75,15 @@ describe 'users service' do
     household_size: 3)
 
     usages = File.read('spec/fixtures/usages.json')
-    stub_request(:get, /get_bills/).to_return(
+    stub_request(:get, /friendships/).to_return(
       status: 200, body: usages
     )
 
     response = UsersService.get_usages(user.id)
 
     expect(response).to have_key(:data)
-    expect(response[:data]).to have_key(:id)
-    expect(response[:data]).to have_key(:attributes)
-    expect(response[:data][:attributes]).to have_key(:user_id)
-    expect(response[:data][:attributes]).to have_key(:user_kwh)
-    expect(response[:data][:attributes]).to have_key(:end_date)
-
-    response[:data][:attributes][:friends_data].each do |friend|
-      expect(friend).to have_key(:friend_id)
-      expect(friend).to have_key(:kwh_usage)
-      expect(friend).to have_key(:end_date)
+    response[:data].each do |usage|
+      expect(usage).to have_key(:attributes)
     end
   end
 end
