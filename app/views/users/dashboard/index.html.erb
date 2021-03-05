@@ -1,6 +1,6 @@
 <h1>Welcome, <%= current_user.full_name %></h1>
 
-<% if not session[:referral] %>
+<% if not session[:referral] || @usage %>
   <%= form_with url: utilities_path, method: :get, local: true do |f| %>
     <%= f.select :utility, provider_list.map {|utility| [utility[:attributes][:name], utility[:attributes][:id]]}, prompt: "select-field" %>
     <%= f.submit 'Authorize Provider', class: "button rounded-lg px-8 " %>
@@ -26,9 +26,9 @@
         <div class="grid gap-12 md:gap-12 rounded-lg scrolling-touch scrollbar-hidden overflow-x-scroll md:overflow-auto mx-6 md:mx-0">
         <% friend_count = @data_info_usage[:friends].count %>
         <% friend_count.times do %>
-          <%= column_chart [@data_info_usage[:user_usage].name, @data_info_usage[:user_usage].monthly_points] %>
+          <%= column_chart [[@usage.user.full_name, @usage.monthly_points]] %>
           <section id="points-breakdown-section">
-            <p><b><%= @data_info_usage[:user_usage].name %></b>: <%= @data_info_usage[:user_usage].monthly_points %> points this month</p>
+            <p><b><%= @data_info_usage[:user_usage].name %></b>: <%= @usage.monthly_points %> points this month</p>
           </section>
         <% end %>
         </div>
