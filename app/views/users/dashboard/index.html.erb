@@ -1,6 +1,6 @@
 <h1>Welcome, <%= current_user.full_name %></h1>
 
-<% if not session[:referral] %>
+<% if not session[:referral] || @usage %>
   <%= form_with url: utilities_path, method: :get, local: true do |f| %>
     <%= f.select :utility, provider_list.map {|utility| [utility[:attributes][:name], utility[:attributes][:id]]}, :style => "border: solid; border-style: solid; border-color: gray;", prompt: "select-field"  %>
     <%= f.submit 'Authorize Provider', class: "button rounded-lg bg-gray-300 px-8 " %>
