@@ -4,6 +4,8 @@
 
 Run The Jules is an application in which users can sign up and compare their electricity usage with their friends or to an anynomous average in their area!
 
+<img width="1440" alt="Screen Shot 2021-03-05 at 9 45 30 AM" src="https://user-images.githubusercontent.com/64919819/110146211-87fd7300-7d97-11eb-89c4-4514dea7fdfb.png">
+
 This project is deployed on:
 
 - [Heroku here](https://run-the-joules.herokuapp.com/)
