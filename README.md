@@ -59,6 +59,9 @@ This project is deployed on:
 
 This application allows a user to sign up/sign in with google, and then proceed to authenticate to pull their electricity usage from their utility provider.  They can pull 12 months of past usage as well.
 
+### Design
+![Application Design Diagram](https://flic.kr/p/2kPKsAt)
+
 ### Built With
 
 * [Ruby on Rails](https://rubyonrails.org/)
