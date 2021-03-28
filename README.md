@@ -60,7 +60,7 @@ This project is deployed on:
 This application allows a user to sign up/sign in with google, and then proceed to authenticate to pull their electricity usage from their utility provider.  They can pull 12 months of past usage as well.
 
 ### Design
-![Application Design Diagram](https://www.flickr.com/photos/192647270@N04/51079825727/in/photostream/lightbox/)
+![Application Design Diagram](https://live.staticflickr.com/65535/51079825727_683d0a589b_z.jpg)
 
 ### Built With
 
