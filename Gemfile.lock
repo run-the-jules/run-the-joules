@@ -137,8 +137,8 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
     method_source (1.0.0)
-    mimemagic (0.3.6)
     mini_mime (1.1.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -147,7 +147,8 @@ GEM
     net-http-persistent (2.9.4)
     net-http-pipeline (1.0.1)
     nio4r (2.5.7)
-    nokogiri (1.11.3-x86_64-darwin)
+    nokogiri (1.11.3)
+      mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
@@ -320,7 +321,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  x86_64-darwin-19
+  ruby
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -344,6 +345,7 @@ DEPENDENCIES
   pry
   puma (~> 3.11)
   rails (~> 5.2.4)
+    
   rspec-rails
   rubocop-rails
   sass-rails (~> 5.0)
@@ -361,4 +363,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   2.2.5
+   2.1.4

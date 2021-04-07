@@ -20,6 +20,7 @@ gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+gem 'rake'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
